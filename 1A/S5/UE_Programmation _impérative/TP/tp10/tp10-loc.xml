@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file />
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 3" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 89" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp10/evaluer_alea_lca.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 6" line=" 4" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp10/evaluer_alea_th.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp10/lca.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 62" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp10/lca.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 6" line=" 3" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp10/th_sujet.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 67" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp10/th.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 10" line=" 36" >
+      <vfs_project />
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp10/th.adb</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

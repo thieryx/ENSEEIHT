@@ -1,0 +1,20 @@
+with OpenFile; use OpenFile;
+with Tableau; use Tableau;
+with Ada.Text_IO; use Ada.Text_IO;
+
+
+procedure test_decompression is
+    Tab_Texte :T_Tab_symbole;
+    Tab_octet :T_Tab;
+    Tab_arbre : T_Tab_symbole;
+begin
+    lecture(Tab_Texte, Tab_octet, Tab_arbre);
+    New_line; New_line;
+    Afficher_Tab(Tab_octet);
+
+    New_line;New_line;
+    Afficher_Tab_symbole(Tab_arbre);
+
+    New_line;New_line;
+    Afficher_Tab_symbole(Tab_Texte);
+end test_decompression;

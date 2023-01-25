@@ -1,0 +1,237 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+RV NO_STREAMS
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U openfile%b		openfile.adb		5dfd4600 NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.streams%s		a-stream.adb		a-stream.ali
+W ada.streams.stream_io%s  a-ststio.adb		a-ststio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W compression%s		compression.adb		compression.ali
+Z system.img_uns%s	s-imguns.ads		s-imguns.ali
+Z system.stream_attributes%s  s-stratt.adb	s-stratt.ali
+Z system.unsigned_types%s  s-unstyp.ads		s-unstyp.ali
+Z system.val_int%s	s-valint.ads		s-valint.ali
+W tableau%s		tableau.adb		tableau.ali
+
+U openfile%s		openfile.ads		a7873239 EE NE OO PK
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W compression%s		compression.adb		compression.ali
+W tableau%s		tableau.adb		tableau.ali
+
+D ada.ads		20210520051130 76789da1 ada%s
+D a-except.ads		20210520051127 946f3014 ada.exceptions%s
+D a-inteio.ads		20210520051127 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20210520051127 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20210520051128 119b8fb3 ada.streams%s
+D a-ststio.ads		20210520051128 d6d358e8 ada.streams.stream_io%s
+D a-string.ads		20210520051128 90ac6797 ada.strings%s
+D a-sttebu.ads		20210520051128 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20210520051128 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051129 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051129 aef4d56d ada.text_io%s
+D a-tiinio.ads		20210520051129 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20210520051129 0e9b276f ada.unchecked_conversion%s
+D arbre.ads		20220115132725 1e0feb81 arbre%s
+D compression.ads	20220113222010 23a93e73 compression%s
+D interfac.ads		20210520051131 edec285f interfaces%s
+D i-cstrea.ads		20210520051131 e53d8b8e interfaces.c_streams%s
+D lca_projet.ads	20220115132725 8db01d20 lca_projet%s
+D openfile.ads		20220115132725 f00c4c69 openfile%s
+D openfile.adb		20220115164001 dae2a575 openfile%b
+D piles.ads		20220113162621 b1e5c8b6 piles%s
+D piles.adb		20220113162621 93fc7b34 piles%b
+D system.ads		20210520051134 a2da961d system%s
+D s-crtl.ads		20210520051131 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051131 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051131 078245e4 system.file_control_block%s
+D s-imageu.ads		20210520051132 525c30c6 system.image_u%s
+D s-imguns.ads		20210520051132 0e4da2ac system.img_uns%s
+D s-parame.ads		20210520051133 4752c4cb system.parameters%s
+D s-putima.ads		20210520051133 4e095881 system.put_images%s
+D s-secsta.ads		20210520051133 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051133 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051133 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051133 472fbca8 system.standard_library%s
+D s-stoele.ads		20210520051133 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051133 ed88f8fb system.storage_elements%b
+D s-stratt.ads		20210520051133 7bdda3fa system.stream_attributes%s
+D s-traent.ads		20210520051133 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051133 2b077493 system.unsigned_types%s
+D s-valint.ads		20210520051133 e7fcadb7 system.val_int%s
+D s-valuns.ads		20210520051133 dac7b45d system.val_uns%s
+D s-valuei.ads		20210520051133 978dd0a6 system.value_i%s
+D s-valueu.ads		20210520051133 7b8fccf5 system.value_u%s
+D s-wchcon.ads		20210520051134 1b7d22d2 system.wch_con%s
+D tableau.ads		20220115132724 dad6954e tableau%s
+D unchconv.ads		20210520051134 ca2f9e18 unchecked_conversion%s
+G a e
+G c s s s [s openfile 5 1 none]
+G c Z s s [afficher_pileR openfile__afficher_pileGP136 7 15 none]
+G c Z s s [afficher_pile openfile 7 15 none]
+G c Z s b [stockage openfile 12 14 none]
+G c Z s b [tab_frequence openfile 16 14 none]
+G c Z s b [nb_symbole openfile 19 14 none]
+G c Z s b [tab_symbole openfile 21 14 none]
+G c Z s b [ecriture openfile 23 15 none]
+G c Z s b [lecture openfile 25 15 none]
+G c Z s b [ecriture_decompress openfile 27 15 none]
+G r i none [s openfile 5 1 none] [afficher tableau__pile_caractere 49 15 5_5]
+G r c none [afficher_pileR openfile__afficher_pileGP136 7 15 none] [est_vide tableau__pile_caractere 19 14 5_5]
+G r c none [ecriture openfile 23 15 none] [construire_liste_octet_fichier compression 27 14 none]
+G r c none [ecriture openfile 23 15 none] [taille tableau__pile_caractere 26 14 5_5]
+G r c none [ecriture openfile 23 15 none] [sommet tableau__pile_caractere 23 14 5_5]
+G r c none [ecriture openfile 23 15 none] [depiler tableau__pile_caractere 39 15 5_5]
+G r c none [ecriture openfile 23 15 none] [transformer_tab_binaire_octet compression 30 14 none]
+G r c none [lecture openfile 25 15 none] [construire_liste_octet_fichier compression 27 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 19|3r6 3r23 20|1r6 1r33 2r6 2r23 3r6 3r33 8r17
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[12|46] 20|3w10 3r37
+X 5 a-stream.ads
+36K13*Streams 87e16 20|1r10 1r37 8r21
+X 6 a-ststio.ads
+39K21*Stream_IO 224e26 20|1w18 1r45 8r29
+42P9*Stream_Access(5|39R9) 20|11r21 86r13 146r21 200r14
+44P9*File_Type 20|8r39
+47n23*In_File{47E9} 20|15r20 159r20
+47n32*Out_File{47E9} 20|136r23 202r23
+68U14*Create 20|136s9 202s9
+74U14*Open 20|15s9 159s9
+80U14*Close 20|24s9 141s9 196s9 207s9
+90V13*End_Of_File{boolean} 20|18s19 162s19
+92V13*Stream{42P9} 20|16s14 137s14 160s14 203s14
+X 11 a-textio.ads
+58K13*Text_IO 725e16 19|3w10 3r27 20|2w10 2r27
+390U14*Put 19|7r60
+X 15 compression.ads
+6K9*compression 31e16 19|1w6 1r26 20|5w6 5r23
+27V14*Construire_Liste_octet_fichier{45|11R10} 20|92s22 176s30
+30V14*Transformer_Tab_binaire_octet{45|18R10} 20|135s22
+X 19 openfile.ads
+5K9*OpenFile 28l5 28e13 20|7b14 209l5 209t13
+7U15*Afficher_Pile[21|49]
+8M10*T_Octet 9r9 20|12r21 19r22 139r13 139r29 147r21 163r22 164r86 205r13
+. 205r29
+12V14*Stockage{45|11R10} 12>23 20|10b14 26l9 26t17
+12a23 File_Name{string} 20|10b23 15r29
+16V14*Tab_Frequence{45|18R10} 16>28 20|29b14 46l9 46t22
+16r28 Tab_Texte{45|11R10} 20|29b28 37r19 39r20
+19V14*Nb_Symbole{integer} 19>25 20|48b14 58l9 58t19
+19r25 Tab_Freq{45|18R10} 20|48b25 53r16
+21V14*Tab_Symbole{45|11R10} 21>26 21>56 20|60b14 80l9 80t20
+21r26 Tab_Texte{45|11R10} 20|60b26 66r21 68r38 73r50
+21i56 Nb_Symbole{integer} 20|60b56 67r25
+23U15*ecriture 23>24 23>50 23>84 23>114 20|82b15 142l9 142t17
+23r24 Tab_Huff{45|31R10} 20|82b24 104r25 105r60 106r29 107r55 115r21 116r16
+. 117r25 118r51
+23r50 Liste_binaire{45|11R10} 20|82b50 98r21 99r54
+23r84 Tab_texte{45|11R10} 20|82b84 103r21 105r35
+23r114 Tab_octet_compress{45|18R10} 20|82b114 92r53
+25U15*lecture 25<23 25<54 25<77 20|144b15 197l9 197t16
+25r23 Tab_Texte{45|11R10} 20|144b23 154m9 193m13 193r32 194m13 194r38
+25r54 Tab_octet{45|18R10} 20|144b54 157m9 170m13 171m13 171r38 174m9 175m9
+. 175r34 178r50 179r94 184r29
+25r77 Tab_arbre{45|11R10} 20|144b77 155m9 185m13 185r32 185r81 186r37 189m13
+. 189r38 192r18
+27U15*ecriture_decompress 27>35 20|199b15 208l9 208t28
+27r35 texte{45|11R10} 20|199b35 204r21 205r51
+X 20 openfile.adb
+8p5 File{6|44P9} 15m14 15r14 16r21 18r31 24m16 24r16 136m17 136r17 137r22
+. 141m15 141r15 159m14 159r14 160r21 162r31 196m15 196r15 202m17 202r17 203r21
+. 207m16 207r16
+11p9 S{6|42P9} 16m9 19r36
+12m9 Octet{19|8M10} 19m13 21r68
+13r9 Symbole{45|11R10} 17m9 20m13 20r36 21m13 21r30 25r16
+30r9 Tab_Freq{45|18R10} 34m13 40m21 40r45 45r16
+31i9 i{integer} 37r15 39r39 43m13 43r18
+33i13 j{integer} 34r31
+38i17 j{integer} 39r58 40r39 40r63
+49i9 Nb{integer} 51m9 54m17 54r23 57r16
+52i13 i{integer} 53r34
+61r9 Tab{45|11R10} 64m9 68r20 73m17 73r30 74m17 74r36 78m9 78r28 79r16
+62b9 bool{boolean} 65m9 69m21 72r20 76m13
+66i13 i{integer} 68r57 73r69
+67i17 j{integer} 68r33
+83r9 Tableau{45|11R10} 90m9 94m13 94r30 95m13 95r36 99m13 99r30 100m13 100r36
+. 108m25 108r42 110m25 110r48 119m21 119r38 121m21 121r44 125m9 125r32 128r18
+. 131m17 131r34 132m17 132r40 135r52
+84r9 Tableau_2{45|18R10} 135m9 138r21 139r37
+85r9 Tab_octet{45|11R10} 92m9 93r21 94r54
+86p9 S{6|42P9} 137m9 139r27
+87r9 Pile{21|9R10[45|5]} 106m21 108r89 109m48 109r48 117m17 119r85 120m44
+. 120r44
+88i9 reste{integer} 128m9 129r13 130r25
+93i13 i{integer} 94r73
+98i13 i{integer} 99r77
+103i13 i{integer} 105r54
+104i17 j{integer} 105r78 106r47 107r73
+107i25 k{integer}
+115i13 i{integer} 116r34 117r43 118r69
+118i21 k{integer}
+130i17 i{integer}
+138i13 i{integer} 139r56
+145a9 File_Name{string} 159r29
+146p9 S{6|42P9} 160m9 163r36
+147m9 Octet{19|8M10} 163m13 164r100
+148r9 Tab_recep_octet{45|18R10} 158m9 164m13 164r38 165m13 165r44 169r15
+. 169r48 170r40 174r36 176r61 178r22
+149i9 cpt{integer} 168m9 169r40 169r73 170r32 170r65 172m13 172r20 174r28
+. 174r61
+150r9 Tab_recep_symbole{45|11R10} 176m9 179r64
+151i9 compteur_1{integer} 183m9 184r15 187m17 187r31
+152r9 Tab_Symbole{45|11R10} 156m9 179m13 179r34 180m13 180r40 185r60 186r16
+. 192r43 193r60
+178i13 i{integer} 179r91
+192i13 i{integer} 193r81
+200p9 S{6|42P9} 203m9 205r27
+204i13 i{integer} 205r66
+X 21 piles.ads
+9R10*T_Pile 20|87r31[45|5]
+23V14*Sommet{character} 20|108s82[45|5] 119s78[45|5]
+26V14*Taille{integer} 20|107s48[45|5] 118s44[45|5]
+39U15*Depiler 20|109s40[45|5] 120s36[45|5]
+49u15*Afficher 19|7r51[45|5]
+X 45 tableau.ads
+3K9*Tableau 19|2w6 2r19 20|4w6 4r19 45|40e12
+5K13*Pile_Caractere[21|7] 19|7r36 20|87r16 107r33 108r67 109r25 118r29 119r63
+. 120r21
+9A10*T_Tab_character(character)<integer>
+11R10*T_Tab_symbole 19|12r53 16r43 21r41 21r85 23r69 23r99 25r39 25r92 27r43
+. 20|10r53 13r19 29r43 60r41 60r85 61r15 82r69 82r99 83r19 85r21 144r39 144r93
+. 150r29 152r23 199r43 45|14e15
+12a9*Elements{9A10} 20|21m21 39r30 68r24 68r48 73m21 73r60 94m21 94r64 99m21
+. 99r68 105r45 108m33 119m29 131m25 179m25 179r82 185m23 185r72 186r28 193m23
+. 193r72 205r57
+13i9*Nb_Elements{integer} 20|17m17 20m21 20r44 21r38 37r29 64m13 66r31 73r34
+. 74m21 74r40 78m13 78r32 90m17 93r31 94r38 95m21 95r44 98r35 99r38 100m21
+. 100r44 103r31 108r50 110m33 110r56 119r46 121m29 121r52 125m17 125r40 128r26
+. 131r42 132m25 132r48 154m19 155m19 156m21 179r46 180m25 180r52 185r42 185r91
+. 186r47 189m23 189r48 192r28 192r55 193r42 194m23 194r48 204r27
+16A10*T_Tab_integer(integer)<integer>
+18R10*T_Tab 19|16r65 19r39 23r138 25r70 20|29r65 30r20 48r39 82r138 84r21
+. 144r70 148r27 45|21e15
+19a9*Elements{16A10} 20|34m22 40m30 40r54 53r25 139r47 164m29 169r31 169r64
+. 170m23 170r56 174m19 174r52
+20i9*Nb_Elements{integer} 20|138r31 157m19 158m25 164r54 165m29 165r60 171m23
+. 171r48 175m19 175r44 178r38 178r60 179r104 184r39
+25i13*char{integer} 20|105r81 116r37
+26r13*binaire{21|9R10[5]} 20|106r50 107r76 117r46 118r72
+29A10*T_Tab_Huff_char(23R10)<integer>
+31R10*T_Tab_Huff 19|23r38 20|82r38 45|34e15
+32a9*Elements{29A10} 20|105r69 106r38 107r64 116r25 117r34 118r60
+33i9*Nb_Elements{integer} 20|104r34 115r30
+

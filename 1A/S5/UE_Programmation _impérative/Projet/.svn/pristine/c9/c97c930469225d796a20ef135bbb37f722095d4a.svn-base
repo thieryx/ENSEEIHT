@@ -1,0 +1,26 @@
+with Piles;
+with Arbre; use Arbre;
+with LCA_projet;
+with Tableau; use Tableau;
+
+package compression is
+
+    package Pile_Caractere is
+            new Piles (Capacite => 8, T_Element => Character);
+    use Pile_Caractere;
+
+    -- Construire le tableau de Huffman
+    function Construire_Tab_Huff(Tab_binaire : in T_Tab_symbole; Tab_octet : in T_Tab; Nb_symbole : in Integer) return  T_Tab_Huff;
+
+    -- Construire l'arbre de Huffman
+    function Construire_Arbre_Huff(Tab_freq : in T_Tab) return T_Arbre;
+
+    -- Créer la liste des symboles en tant qu'octet par parcours infixe
+    function Construire_Liste_octet(Arbre : in T_Arbre; Tab_freq : in T_Tab; Nb_symbole : in Integer) return T_Tab;
+
+    -- Créer la liste des symboles avec leur représentation binaire par parcours infixe
+    function Construire_Liste_binaire(Arbre : in T_Arbre; Nb_Symbole : in Integer) return T_Tab_symbole;
+
+
+
+end compression;

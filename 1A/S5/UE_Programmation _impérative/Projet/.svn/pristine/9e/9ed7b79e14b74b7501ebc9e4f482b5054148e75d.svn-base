@@ -1,0 +1,118 @@
+with Ada.Text_IO;            use Ada.Text_IO;
+with LCA_projet;
+with Arbre;    use Arbre;
+with Piles;
+with Tableau;  use Tableau;
+with Ada.Integer_Text_IO;    use Ada.Integer_Text_IO;
+
+
+package body decompression is
+
+    procedure Afficher_Pile is new Pile_Caractere.Afficher(Put);
+
+    package LCA_projet_new is
+            new LCA_projet ( T_Donnee => T_Arbre);
+    use LCA_projet_new;
+
+    procedure Reconstruire_Liste_octet(Tab_octet : in out T_Tab) is
+        indice: Integer;
+    begin
+        indice := Tab_octet.Elements(1);
+        for i in 1..indice-1 loop
+            Tab_octet.Elements(i) := Tab_octet.Elements(i+1);
+        end loop;
+        Tab_octet.Elements(indice) := -1;
+    end Reconstruire_Liste_octet;
+
+    procedure Reconstruire_Arbre_Gauche(Tab_Huff: in T_Tab_Huff; Arbre: in out T_Arbre) is
+        existence : boolean := False;    -- variable d'existence de sous-arbre
+        rec: boolean := False;           -- variable de récursivité
+        Tab_Huff_copie : T_Tab_Huff;
+        pointeur: T_Arbre;
+    begin
+        Tab_Huff_copie := Tab_Huff;
+        for i in 1..Tab_Huff.Nb_Elements loop
+            if Pile_Caractere.Sommet(Tab_Huff_copie.Elements(i).binaire) = '0' then
+                Pile_Caractere.Depiler(Tab_Huff_copie.Elements(i).binaire);
+                existence := True;
+            end if;
+        end loop;
+
+        if existence then
+            Put("yes");
+            Enregistrer_Gauche(Arbre, 0);
+            Put("yes");
+
+        end if;
+
+        for j in 1..Tab_Huff_copie.Nb_Elements loop
+            if Pile_Caractere.Est_Vide(Tab_Huff_copie.Elements(j).binaire) then
+                if Tab_Huff_copie.Elements(j).char = -1 then
+                    Modifier_Frequence(Arbre, -1);
+                else
+                    Modifier_Frequence(Arbre, Tab_Huff_copie.Elements(j).char);
+                    Pile_Caractere.Empiler(Tab_Huff_copie.Elements(j).binaire,'2');
+                end if;
+            else
+                rec := True;
+            end if;
+        end loop;
+
+        if rec then
+            pointeur := Arbre_Gauche(Arbre);
+            Reconstruire_Arbre_Huff(Tab_Huff_copie, pointeur);
+        end if;
+
+    end Reconstruire_Arbre_Gauche;
+
+    procedure Reconstruire_Arbre_Droit(Tab_Huff: in T_Tab_Huff; Arbre: in out T_Arbre) is
+        existence : boolean := False;    -- variable d'existence de sous-arbre
+        rec: boolean := False;           -- variable de récursivité
+        noeud1: T_Arbre;
+        Tab_Huff_copie : T_Tab_Huff;
+        pointeur: T_Arbre;
+    begin
+        Tab_Huff_copie := Tab_Huff;
+        for i in 1..Tab_Huff.Nb_Elements loop
+            if Pile_Caractere.Sommet(Tab_Huff_copie.Elements(i).binaire) = '1' then
+                Pile_Caractere.Depiler(Tab_Huff_copie.Elements(i).binaire);
+                existence := True;
+            end if;
+        end loop;
+
+        if existence then
+            Enregistrer_Droit(Arbre,0);
+        end if;
+
+        for j in 1..Tab_Huff_copie.Nb_Elements loop
+            if Pile_Caractere.Est_Vide(Tab_Huff_copie.Elements(j).binaire) then
+                if Tab_Huff_copie.Elements(j).char = -1 then
+                    Modifier_Frequence(Arbre, -1);
+                else
+                    Modifier_Frequence(Arbre, Tab_Huff_copie.Elements(j).char);
+                    Pile_Caractere.Empiler(Tab_Huff_copie.Elements(j).binaire,'2');
+                end if;
+            else
+                rec := True;
+            end if;
+        end loop;
+
+        if rec then
+            pointeur := Arbre_Droit(Arbre);
+            Reconstruire_Arbre_Huff(Tab_Huff_copie, pointeur);
+        end if;
+
+    end Reconstruire_Arbre_Droit;
+
+    procedure Reconstruire_Arbre_Huff(Tab_Huff : in T_Tab_Huff; Arbre : in out T_Arbre) is
+        pointeur_gauche: T_Arbre;
+        pointeur_droit: T_Arbre;
+    begin
+        pointeur_gauche := Arbre_Gauche(Arbre);
+        Reconstruire_Arbre_Gauche(Tab_Huff, pointeur_gauche);
+        Reconstruire_Arbre_Droit(Tab_Huff, pointeur_droit);
+    end Reconstruire_Arbre_Huff;
+
+
+
+end decompression;

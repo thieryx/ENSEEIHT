@@ -1,0 +1,23 @@
+[MAPPING FILE]
+/tmp/GNAT-TEMP-000003.TMP
+[TOOLCHAIN VERSION]
+ada
+GNAT 2021
+[MAIN BASE NAME]
+lca
+[COMPILER PATH]
+/mnt/n7fs/ens/tp_cregut/GNAT/2021/bin/gcc
+[COMPILER LEADING SWITCHES]
+-c
+-x
+ada
+-gnatA
+[MAIN DEPENDENCY FILE]
+/home/txu/Documents/Annee_1/pim/tp/tp10/lca.ali
+[DEPENDENCY FILES]
+[BINDING OPTIONS]
+gnatbind_prefix=
+-E
+[PROJECT FILES]
+/home/txu/Documents/Annee_1/pim/tp/tp10/tp10.gpr
+20211115215528 1f0ec504dcb2c98b5dc4180ecdd1bfda

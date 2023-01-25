@@ -1,0 +1,23 @@
+with Openfile; use Openfile;
+with compression; use compression;
+with Arbre; use Arbre;
+
+procedure test_compression is
+
+    File_Name: String :=  "exemple_fichier.out";
+    Tab_text: T_Symbole;
+    Tab_Freq: T_Tab;
+    Nombre_Symbole: Integer;
+    Tab_Huff: T_Tab_Huff;
+    Arbre_Huff: T_Arbre;
+    Liste_octet: T_Tab;
+    Liste_binaire: T_Tab_character;
+begin
+    Tab_text := Stockage(File_Name);
+    Tab_Freq := Tab_Frequence(Tab_text);
+    Nombre_Symbole := Nb_Symbole(Tab_Freq);
+    Arbre_Huff := Construire_Arbre_Huff(Tab_Freq);
+    Liste_octet := Construire_Liste_octet(Arbre_Huff, Tab_Freq, Nombre_Symbole);
+    Liste_binaire := Construire_Liste_binaire(Arbre_Huff, Nombre_Symbole);
+    Tab_Huff := Construire_Tab_Huff(Liste_binaire, Liste_octet, Nombre_Symbole);
+end test_compression;

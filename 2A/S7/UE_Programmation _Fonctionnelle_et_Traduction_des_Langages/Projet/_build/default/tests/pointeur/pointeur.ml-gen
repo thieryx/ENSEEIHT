@@ -1,0 +1,2 @@
+(** @canonical Pointeur.Test *)
+module Test = Pointeur__Test

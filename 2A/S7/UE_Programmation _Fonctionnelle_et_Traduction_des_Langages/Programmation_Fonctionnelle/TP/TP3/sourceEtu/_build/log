@@ -1,0 +1,120 @@
+# dune runtest
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/pf/TP3/sourceEtu
+# Auto-detected concurrency: 4
+$ /usr/local/bin/ocamlc.opt -config > /var/folders/j1/wc08hhbx3lgdhd7hby2j9ds40000gn/T/dune_472711_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/Users/Thierry/.opam/4.12.0/lib/toplevel"
+#  ; ocaml_bin = External "/usr/local/bin"
+#  ; ocaml = Ok External "/Users/Thierry/.opam/4.12.0/bin/ocaml"
+#  ; ocamlc = External "/usr/local/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/usr/local/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/usr/local/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/usr/local/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/Thierry/.opam/4.12.0/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/usr/local/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/pf/TP3/sourceEtu"
+#        ; "INSIDE_DUNE" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/pf/TP3/sourceEtu/_build/default"
+#        ; "MANPATH" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/pf/TP3/sourceEtu/_build/install/default/bin"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/pf/TP3/sourceEtu/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/pf/TP3/sourceEtu/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/pf/TP3/sourceEtu/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/Users/Thierry/.opam/4.12.0/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.12.0"
+#      ; standard_library_default = "/usr/local/lib/ocaml"
+#      ; standard_library = "/usr/local/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "clang"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "clang"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "clang"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "clang"; "-arch"; "x86_64"; "-Wno-trigraphs"; "-c" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-apple-darwin21.3.0"
+#      ; target = "x86_64-apple-darwin21.3.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X029"
+#      ; cmi_magic_number = "Caml1999I029"
+#      ; cmo_magic_number = "Caml1999O029"
+#      ; cma_magic_number = "Caml1999A029"
+#      ; cmx_magic_number = "Caml1999Y029"
+#      ; cmxa_magic_number = "Caml1999Z029"
+#      ; ast_impl_magic_number = "Caml1999M029"
+#      ; ast_intf_magic_number = "Caml1999N029"
+#      ; cmxs_magic_number = "Caml1999D029"
+#      ; cmt_magic_number = "Caml1999T029"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && .ppx/bfcab61e6a21ecf6d2f80029fc1ef484/ppx.exe --cookie 'inline_tests="enabled"' --cookie 'library-name="tp3"' -o tp3.pp.ml --impl tp3.ml -corrected-suffix .ppx-corrected -diff-cmd - -dump-ast)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I .tp3.objs/byte -I /Users/Thierry/.opam/4.12.0/lib/base -I /Users/Thierry/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/Thierry/.opam/4.12.0/lib/base/caml -I /Users/Thierry/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/Thierry/.opam/4.12.0/lib/jane-street-headers -I /Users/Thierry/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/sexplib0 -I /Users/Thierry/.opam/4.12.0/lib/time_now -no-alias-deps -opaque -o .tp3.objs/byte/tp3.cmo -c -impl tp3.pp.ml)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -w -24 -g -g -bin-annot -I .tp3.inline-tests/.tp3.inline-tests.eobjs/byte -I /Users/Thierry/.opam/4.12.0/lib/base -I /Users/Thierry/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/Thierry/.opam/4.12.0/lib/base/caml -I /Users/Thierry/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/Thierry/.opam/4.12.0/lib/jane-street-headers -I /Users/Thierry/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runner/lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/sexplib0 -I /Users/Thierry/.opam/4.12.0/lib/time_now -I .tp3.objs/byte -no-alias-deps -o .tp3.inline-tests/.tp3.inline-tests.eobjs/byte/dune__exe__Inline_test_runner_tp3.cmo -c -impl .tp3.inline-tests/inline_test_runner_tp3.ml-gen)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -I .tp3.objs/byte -I .tp3.objs/native -I /Users/Thierry/.opam/4.12.0/lib/base -I /Users/Thierry/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/Thierry/.opam/4.12.0/lib/base/caml -I /Users/Thierry/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/Thierry/.opam/4.12.0/lib/jane-street-headers -I /Users/Thierry/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/sexplib0 -I /Users/Thierry/.opam/4.12.0/lib/time_now -intf-suffix .ml -no-alias-deps -opaque -o .tp3.objs/native/tp3.cmx -c -impl tp3.pp.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -a -o tp3.cmxa .tp3.objs/native/tp3.cmx)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -w -24 -g -g -I .tp3.inline-tests/.tp3.inline-tests.eobjs/byte -I .tp3.inline-tests/.tp3.inline-tests.eobjs/native -I /Users/Thierry/.opam/4.12.0/lib/base -I /Users/Thierry/.opam/4.12.0/lib/base/base_internalhash_types -I /Users/Thierry/.opam/4.12.0/lib/base/caml -I /Users/Thierry/.opam/4.12.0/lib/base/shadow_stdlib -I /Users/Thierry/.opam/4.12.0/lib/jane-street-headers -I /Users/Thierry/.opam/4.12.0/lib/ppx_compare/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_enumerate/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_hash/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/config -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runner/lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib -I /Users/Thierry/.opam/4.12.0/lib/sexplib0 -I /Users/Thierry/.opam/4.12.0/lib/time_now -I .tp3.objs/byte -I .tp3.objs/native -intf-suffix .ml-gen -no-alias-deps -o .tp3.inline-tests/.tp3.inline-tests.eobjs/native/dune__exe__Inline_test_runner_tp3.cmx -c -impl .tp3.inline-tests/inline_test_runner_tp3.ml-gen)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -w -24 -g -g -o .tp3.inline-tests/inline_test_runner_tp3.exe /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/config/inline_test_config.cmxa /Users/Thierry/.opam/4.12.0/lib/base/base_internalhash_types/base_internalhash_types.cmxa -I /Users/Thierry/.opam/4.12.0/lib/base/base_internalhash_types /Users/Thierry/.opam/4.12.0/lib/base/caml/caml.cmxa /Users/Thierry/.opam/4.12.0/lib/sexplib0/sexplib0.cmxa /Users/Thierry/.opam/4.12.0/lib/base/shadow_stdlib/shadow_stdlib.cmxa /Users/Thierry/.opam/4.12.0/lib/base/base.cmxa -I /Users/Thierry/.opam/4.12.0/lib/base /Users/Thierry/.opam/4.12.0/lib/jane-street-headers/jane_street_headers.cmxa /Users/Thierry/.opam/4.12.0/lib/ppx_sexp_conv/runtime-lib/ppx_sexp_conv_lib.cmxa /Users/Thierry/.opam/4.12.0/lib/ppx_compare/runtime-lib/ppx_compare_lib.cmxa /Users/Thierry/.opam/4.12.0/lib/ppx_enumerate/runtime-lib/ppx_enumerate_lib.cmxa /Users/Thierry/.opam/4.12.0/lib/ppx_hash/runtime-lib/ppx_hash_lib.cmxa /Users/Thierry/.opam/4.12.0/lib/time_now/time_now.cmxa -I /Users/Thierry/.opam/4.12.0/lib/time_now /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runtime-lib/ppx_inline_test_lib.cmxa tp3.cmxa /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runner/lib/ppx_inline_test_runner_lib.cmxa -I /Users/Thierry/.opam/4.12.0/lib/ppx_inline_test/runner/lib .tp3.inline-tests/.tp3.inline-tests.eobjs/native/dune__exe__Inline_test_runner_tp3.cmx -linkall)
+$ (cd _build/default && .tp3.inline-tests/inline_test_runner_tp3.exe inline-test-runner tp3 -source-tree-root . -diff-cmd -)

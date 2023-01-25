@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project >
+    <file_marker column=" 1" line=" 22" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/compression.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 185" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/compression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 37" line=" 10" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/test_compression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 41" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/tableau.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/lca_projet.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/lca_projet.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 32" line=" 50" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/arbre.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 74" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/test_arbre.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 114" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/arbre.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 23" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/openfile.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 48" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/openfile.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 32" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/tableau.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/piles.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 41" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/piles.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/test_piles.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 9" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/decompression.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 117" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/decompression.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/exemple_octet.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/tableau.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/IJ09/projet.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/IJ09/src/tableau.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

@@ -1,0 +1,44 @@
+Nom       : Xu
+Prénom    : Thierry
+Groupe TP : I
+
+
+Consigne :  Ci-dessous, répondre à la place des « ... ».
+
+
+=====[ Temps ]==================================================================
+
+Temps passé sur la V1 : 4 heures 0 minutes
+Temps passé sur la V2 : ... heures ... minutes
+Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
+Bien sûr, les temps renseignés ici ne sont pas pris en compte dans la notation.
+
+
+=====[ Questions ]==============================================================
+
+Indiquer la relation UML entre Cercle et le Point centre du cercle.
+-------------------------------------------------------------------
+
+La relation UML entre Cercle et le Point centre du cercle est une relation de
+composition. En effet, si le Cercle est détruit, on en peut plus parler du point
+centre du cercle. Le Cercle est le "tout" et le Point est la "partie".
+
+
+Comment est réalisée l'exigence E18 ?
+-------------------------------------
+
+Pour réaliser l'exigence E18, il faut créer une variable auxiliaire dans la
+méthode getCentre qui prendra la centre du cercle. Il s'agit de cette variable
+auxiliaire qui sera renvoyée par la méthode. En effet, il est interdit d'avoir
+accès directement au centre du cercle. Il s'agit tout le temps d'une variable
+auxiliaire qui est égale au point centre du cercle qui est renvoyé, notamment
+pour les constructeurs.
+
+
+
+=====[ Explications ]===========================================================
+
+(Facultatif) Donner ici les explications supplémentaires utiles à la
+compréhension du travail rendu.
+
+...

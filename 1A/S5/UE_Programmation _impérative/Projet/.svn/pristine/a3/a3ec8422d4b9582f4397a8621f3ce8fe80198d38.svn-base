@@ -1,0 +1,44 @@
+with Piles;
+with Arbre;
+with LCA_projet;
+generic
+    type T_Arbre is private;
+package compression is
+
+    -- Construire le tableau de Huffman
+    function Construire_Tab_Huff (Tab_binaire: in T_Tab; Tab_octet: in T_Tab; Nb_symbole : in Integer ) return  T_Tab;
+
+    -- Construire l'arbre de Huffman
+    function Construire_Arbre_Huff(Tab_freq : in T_Tab) return T_Arbre;
+
+    -- Construire le tableau de fréquence
+    function Construire_Tab_Freq();
+
+    -- Stocker le texte dans un tableau
+    function Stocker_Texte(MonFichier : in File_type) return T_Tab;
+
+    -- Créer la liste des symboles en tant qu'octet par parcours infixe
+    function Liste_symb_octet(Arbre: in T_Arbre; Tab_freq : in T_Tab) return T_Tab;
+
+    -- Créer la liste des symboles avec leur représentation binaire par parcours infixe
+    function Liste_symb_binaire(Arbre: in T_Arbre) return T_Tab_binaire;
+
+private
+
+    package Piles_new is
+            new Piles (Capacite, T_Element);
+    use Piles_new;
+
+    type T_char is
+        record
+            char: character;
+            binaire: T_Pile;
+        end record;
+
+    type T_Tab_Huff is array(1..256) of T_char;
+
+    type T_Tab is array (1..256) of Integer;
+
+    type T_Tab_binaire is array(1..5000) of character;
+
+end compression;

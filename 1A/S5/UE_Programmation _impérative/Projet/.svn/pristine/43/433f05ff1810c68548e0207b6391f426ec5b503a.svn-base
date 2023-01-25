@@ -1,0 +1,25 @@
+with compression;    use compression;
+
+package OpenFile is
+
+    type T_Symbole is record
+        Elements : T_tab_character;
+        Nb_Elements : Integer;
+    end record;
+
+
+    type T_Octet is mod 2 ** 8;	-- sur 8 bits
+    for T_Octet'Size use 8;
+
+    --Ouvre le fichier contenant le texte à compresser et stock le texte dans un tableau
+    function Stockage(File_Name : in String) return T_Symbole;
+
+    --Créer un tableau de taille 256 qui contient la fréquence de chaque symbole
+    --présent dans le texte rangé à l'index correspondant à leur code ASCII
+    function Tab_Frequence(Tab_Texte : in T_Symbole) return T_Tab;
+
+    --Retourne le nombre de symbole différent dans le texte
+    function Nb_Symbole(Tab_Freq : in T_Tab) return Integer;
+
+
+end OpenFile;

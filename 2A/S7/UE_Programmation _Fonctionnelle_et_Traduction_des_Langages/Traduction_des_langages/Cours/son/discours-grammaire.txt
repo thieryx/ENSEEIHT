@@ -1,0 +1,47 @@
+En TD et TP vous allez réaliser un compilateur pour le language Rat dans la grammaire est exposé sur ce transparent.
+Cette grammaire va entraîner quelques lourdeurs d'écriture des programme, notamment avec l'utilisation de quelques mots clés dont ont aurait voulu se passer comme le mot clé "call" (règle 20) et va nécessité beaucoup de parenthésage notamment au niveau des expressions binaires (règles 30 à 34). C'est un choix que nous avons fait pour que l'analyseur syntaxique soit plus simple.
+
+Maintenant étudions cette grammaire de plus près.
+
+La première règle est là pour simplifier la gestion de la fin de fichier représentée par le $.
+
+La règle 2 nous dit qu'un programme est une fonction suivie d'une programme. Cette récursivité qui s'arrête sur les règles 3 ou 4, induit qu'un programme est composé de la définition de plusieurs fonctions, suivi d'un bloc principal.
+
+La règle 3 nous donne la forme des fonctions, à savoir un type (le type de retour), un id (le nom), la liste des paramètres (DP) et un bloc (le corps de la fonction).
+
+La forme utilisée pour les paramètres est définie par les règles 15 et 16. DP est un type suivi d'un identifiant, suivi de DP. Donc pour les paramètres nous aurons une concaténation de type identifiant, sans mettre de virgule entre les paramètres. Là encore il s'agit de simplifié l'écriture de la grammaire.
+
+Ensuite, un bloc est simplement une suite d'instructions (IS) entre accolades.
+
+Les règles 6 nous dit qu'une suite d'instructions est une instruction suivie d'une suite d'instructions. La récursivité s'arrêtant grâce à la règle 7.
+
+Parcourons maintenant les différentes instruction du langage Rat.
+Règle 8 : la déclaration de variable. Nous donnerons son type, son nom et E, l'expression à laquelle elle est initialisé. Vous voyez qu'on ne pourra pas déclarer de variable sans l'initialiser en même temps.
+Règle 9 : l'affectation avec l'identifiant et l'expression à laquelle vous affectez l'identifiant
+Règle 10 : la déclaration de constante. Les constantes sont forcément des entiers. Il y a le mot clé const, le nom de la constante et un entier. entier est en fait associé à l'expression régulière des entiers et est un terminal de la grammaire.
+Règle 11 : l'affichage d'une expression.
+Règle 12 : vous avez la conditionnelle. Vous voyez que vous avez forcément un bloc then et un else. vous ne pouvez pas avoir uniquement un bloc then.
+Règle 13 : la boucle TantQue
+Règle 14 : l’instruction de retour. Il faudra faire des vérification de bonne utilisation de cette règle par exemple qu'elle est utilisée uniquement dans une fonction.
+
+Les types que nous manipulerons sont les booléens (règle 17), les entiers (règle 18) et les rationnels (règle 19). Les rationnels seront représentés par deux entiers, le numérateur et le dénominateur.
+
+Les différentes expressions sont 
+Règle 20 : l'appel de fonction avec le mot clé call, le nom de la fonction puis la liste des paramètre (CP). A l'image de DP, la liste des paramètres se fait par une juxtaposition des expressions des paramètres sans virgule (règle 21 et 22).
+Règles 23 : la définition d'un rationnel à partir de son numérateur et de son dénominateur
+Règle 24 : accès au numérateur d'un rationnel
+Règle 25 : accès au dénominateur d'un rationnel
+Règle 26 : accès en lecture à un identifiant
+Règle 27 et 28 : les 2 booléens true et false
+Règles 29 : les entiers
+Et enfin les opérateurs binaires de 30 à 33 : l’addition, la multiplication, l'égalité, le inférieur. On pourrait en ajouter facilement d'autres mais ça n'aurait pas grand intérêt côté compilation et compliquerait inutilement la génération de code. Mais si vous souhaitez en ajouter d'autres, libre à vous.
+Enfin règle 34, il y a la possibilité de parenthèser les expressions.
+
+
+---------------------------------------
+
+On va maintenant s'intéresser au jugement de typage de la déclaration de fonction. donc un environnement sigma, une déclaration de fonction va bien se typer, c'est à dire se typer en void, et on rajoutera id de type tau 2 fleche tau 1 dans le table des symboles, sous 3 conditions.
+La première condition nous dit que le type déclaré comme étant le type de retour est bien le tau 1 de notre tau 2 fleche tau 1
+La deuxième condition nous dit que le type déclaré des paramètres est bien tau 2. De plus la table des symbole devra être complétée par la déclaratiion des paramètres, représentée ici par sigma p.
+Ensuite il faudra que le corps de la fonction (donc BLOC) soit bien typé, c'est à dire se type en void. Pour celà l'environnement de typage de du corps de la fonction est composé d'un identifiant _fun (mot réservé) associé au type de retour déclaré, qui permettra de vérifier que les expressions associées à un return sont du bon type, de id (le nom de la fonction) associé au type tau 2 -> tau 1, ce qui permettra de définir des fonctions récursives. Les paramètres doivent également être connus lors de l'analyse du coprs de la fonction, d'où la présence de sigma p, plus tous les autres nom, principalement d'autres fonctions déclarées avant, et qui sont dans sigma.
+

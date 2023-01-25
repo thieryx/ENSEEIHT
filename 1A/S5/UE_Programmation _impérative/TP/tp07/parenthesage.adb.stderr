@@ -1,0 +1,4 @@
+parenthesage.adb:1:06: warning: unit "Piles" is not referenced [-gnatwu]
+parenthesage.adb:49:09: warning: constant "Ouvrants" is not referenced [-gnatwu]
+parenthesage.adb:50:09: warning: constant "Fermants" is not referenced [-gnatwu]
+parenthesage.adb:57:15: warning: procedure "Tester_Verifier_Parenthesage" is not referenced [-gnatwu]

@@ -1,0 +1,33 @@
+with Piles;
+with Arbre;
+with LCA_projet;
+generic
+    Capacite: Integer;
+    type T_Element is private;
+    type T_Arbre is private;
+    type T_Donnee is private;
+package compression is
+
+private
+
+    package Piles_new is
+            new Piles (Capacite, T_Element);
+    use Piles_new;
+
+    type T_char is
+        record
+            char: character;
+            binaire: T_Pile;
+        end record;
+
+    package LCA_projet_new is
+            new LCA_projet(T_Donnee);
+    use LCA_projet_new;
+
+    type T_Cellule is
+        record
+            freq: Integer;
+            arbre: T_Arbre;
+            suivant: T_LCA;
+         end record;
+end compression;

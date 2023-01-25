@@ -1,0 +1,8 @@
+
+* Voir le retour général
+* Voir le retour automatique
+
+* Enregistrer: Incorrecte
+* Revoir `Cle_Presente` Utilise Cle_Absente_Exception
+* Supprimer: Il faut utiliser valgrind pour détecter de possibles erreurs dans la gestion de la mémoire
+* Pour_Chaque : Incorrecte 

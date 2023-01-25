@@ -1,0 +1,2 @@
+exemple_vecteurs_creux.adb:14:06: error: cannot use call to function "Est_Nul" as a statement
+exemple_vecteurs_creux.adb:14:06: error: return value of a function call cannot be ignored

@@ -1,0 +1,127 @@
+# dune build mainJava.exe
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root:
+# /Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/Automate/source-atl-tp1
+# Auto-detected concurrency: 4
+$ /usr/local/bin/ocamlc.opt -config > /var/folders/j1/wc08hhbx3lgdhd7hby2j9ds40000gn/T/dune_ce1c9f_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/Users/Thierry/.opam/4.12.0/lib/toplevel"
+#  ; ocaml_bin = External "/usr/local/bin"
+#  ; ocaml = Ok External "/Users/Thierry/.opam/4.12.0/bin/ocaml"
+#  ; ocamlc = External "/usr/local/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/usr/local/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/usr/local/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/usr/local/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/Users/Thierry/.opam/4.12.0/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/usr/local/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/Automate/source-atl-tp1"
+#        ; "INSIDE_DUNE" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/Automate/source-atl-tp1/_build/default"
+#        ; "MANPATH" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/Automate/source-atl-tp1/_build/install/default/bin"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/Automate/source-atl-tp1/_build/install/default/lib"
+#        ; "OCAMLPATH" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/Automate/source-atl-tp1/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/Users/Thierry/Documents/ENSEEIHT/ANNEE_2/S7/Automate/source-atl-tp1/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/Users/Thierry/.opam/4.12.0/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.12.0"
+#      ; standard_library_default = "/usr/local/lib/ocaml"
+#      ; standard_library = "/usr/local/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "clang"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "clang"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "clang"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "macosx"
+#      ; asm = [ "clang"; "-arch"; "x86_64"; "-Wno-trigraphs"; "-c" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-apple-darwin21.3.0"
+#      ; target = "x86_64-apple-darwin21.3.0"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X029"
+#      ; cmi_magic_number = "Caml1999I029"
+#      ; cmo_magic_number = "Caml1999O029"
+#      ; cma_magic_number = "Caml1999A029"
+#      ; cmx_magic_number = "Caml1999Y029"
+#      ; cmxa_magic_number = "Caml1999Z029"
+#      ; ast_impl_magic_number = "Caml1999M029"
+#      ; ast_intf_magic_number = "Caml1999N029"
+#      ; cmxs_magic_number = "Caml1999D029"
+#      ; cmt_magic_number = "Caml1999T029"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl mainJava.ml) > _build/default/.mainJava.eobjs/mainJava.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -intf tokenJava.mli) > _build/default/.mainJava.eobjs/tokenJava.mli.d
+$ (cd _build/default && /usr/local/bin/ocamllex -q -o lexerJava.ml lexerJava.mll)
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl lexerJava.ml) > _build/default/.mainJava.eobjs/lexerJava.ml.d
+$ (cd _build/default && /usr/local/bin/ocamldep.opt -modules -impl tokenJava.ml) > _build/default/.mainJava.eobjs/tokenJava.ml.d
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -bin-annot -I .mainJava.eobjs/byte -no-alias-deps -opaque -o .mainJava.eobjs/byte/dune__exe.cmo -c -impl .mainJava.eobjs/dune__exe.ml-gen)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .mainJava.eobjs/byte -no-alias-deps -opaque -open Dune__exe -o .mainJava.eobjs/byte/dune__exe__TokenJava.cmi -c -intf tokenJava.mli)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .mainJava.eobjs/byte -no-alias-deps -opaque -open Dune__exe -o .mainJava.eobjs/byte/dune__exe__LexerJava.cmo -c -impl lexerJava.ml)
+$ (cd _build/default && /usr/local/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .mainJava.eobjs/byte -no-alias-deps -opaque -open Dune__exe -o .mainJava.eobjs/byte/dune__exe__MainJava.cmo -c -impl mainJava.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .mainJava.eobjs/byte -I .mainJava.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .mainJava.eobjs/native/dune__exe__LexerJava.cmx -c -impl lexerJava.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .mainJava.eobjs/byte -I .mainJava.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .mainJava.eobjs/native/dune__exe__MainJava.cmx -c -impl mainJava.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -nopervasives -nostdlib -g -I .mainJava.eobjs/byte -I .mainJava.eobjs/native -intf-suffix .ml-gen -no-alias-deps -opaque -o .mainJava.eobjs/native/dune__exe.cmx -c -impl .mainJava.eobjs/dune__exe.ml-gen)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .mainJava.eobjs/byte -I .mainJava.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .mainJava.eobjs/native/dune__exe__TokenJava.cmx -c -impl tokenJava.ml)
+$ (cd _build/default && /usr/local/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o mainJava.exe .mainJava.eobjs/native/dune__exe.cmx .mainJava.eobjs/native/dune__exe__TokenJava.cmx .mainJava.eobjs/native/dune__exe__LexerJava.cmx .mainJava.eobjs/native/dune__exe__MainJava.cmx)

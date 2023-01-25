@@ -1,0 +1,2 @@
+(** @canonical Be.Boa *)
+module Boa = Be__Boa

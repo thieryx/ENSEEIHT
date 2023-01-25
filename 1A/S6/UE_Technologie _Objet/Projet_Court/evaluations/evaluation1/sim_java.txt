@@ -1,0 +1,206 @@
+File allumettes/Arbitre.java: 809 tokens, 168 lines
+File allumettes/JeuSimple.java: 97 tokens, 31 lines
+File allumettes/CoupInvalideException.java: 68 tokens, 39 lines
+File allumettes/Joueur.java: 118 tokens, 69 lines
+File allumettes/OperationInterditeException.java: 21 tokens, 16 lines
+File allumettes/StrategieHumain.java: 201 tokens, 58 lines
+File allumettes/StrategieRapide.java: 45 tokens, 15 lines
+File allumettes/ConfigurationException.java: 21 tokens, 17 lines
+File allumettes/Jouer.java: 626 tokens, 138 lines
+File allumettes/Jeu.java: 23 tokens, 26 lines
+File allumettes/StrategieLent.java: 22 tokens, 14 lines
+File allumettes/StrategieExpert.java: 105 tokens, 22 lines
+File allumettes/Procuration.java: 68 tokens, 29 lines
+File allumettes/StrategieNaif.java: 78 tokens, 22 lines
+File allumettes/Strategie.java: 13 tokens, 11 lines
+File allumettes/StrategieTricheur.java: 149 tokens, 42 lines
+Total input: 16 files (16 new, 0 old), 2464 tokens
+
+allumettes/Jouer.java: line 66-72 [79]
+allumettes/Jouer.java: line 72-78
+< 		if (args.length == nbJoueurs) {
+< 			int occ0 = args[0].length() - args[0].replace("@", "").length();
+< 			int occ1 = args[1].length() - args[1].replace("@", "").length();
+< 			if (occ1 != 1 || occ0 != 1) {
+< 				throw new ConfigurationException("Saisie invalide");
+< 			}
+< 		} else if (args.length == nbJoueurs + 1) {
+---
+> 		} else if (args.length == nbJoueurs + 1) {
+> 			int occ0 = args[1].length() - args[1].replace("@", "").length();
+> 			int occ1 = args[2].length() - args[2].replace("@", "").length();
+> 			if (occ1 != 1 || occ0 != 1) {
+> 				throw new ConfigurationException("Saisie invalide");
+> 			}
+> 		}
+
+allumettes/Arbitre.java: line 122-126 [38]
+allumettes/Arbitre.java: line 126-130
+< 			joueur.setStrat(new StrategieHumain(joueur.getNom()));
+< 		} else if (choix == 3) {
+< 			joueur.setStrat(new StrategieLent());
+< 		} else if (choix == 4) {
+< 			joueur.setStrat(new StrategieNaif());
+---
+> 			joueur.setStrat(new StrategieNaif());
+> 		} else if (choix == 5) {
+> 			joueur.setStrat(new StrategieRapide());
+> 		} else if (choix == 6) {
+> 			joueur.setStrat(new StrategieTricheur(confiant));
+
+allumettes/StrategieExpert.java: line 1-15 [37]
+allumettes/StrategieNaif.java: line 1-15
+< package allumettes;
+< 
+< import java.util.Random;
+< 
+< /**
+<  * La classe StrategieExpert caractérise un joueur qui
+<  * joue du mieux qu’il peut (s’il peut gagner, il gagnera).
+<  */
+< public class StrategieExpert implements Strategie {
+< 
+< 	@Override
+< 	public int getPrise(Jeu jeu) {
+< 		assert (jeu.getNombreAllumettes() > 0);
+< 		Random rand = new Random();
+< 		if ((jeu.getNombreAllumettes() - 1) % (Jeu.PRISE_MAX + 1) == 0) {
+---
+> package allumettes;
+> 
+> import java.util.Random;
+> 
+> /**
+>  * La classe StrategieNaive caractérise une stratégie où le joueur prend
+>  * aléatoirement un nombre d'allumettes entre un et trois.
+>  */
+> public class StrategieNaif implements Strategie {
+> 
+> 	@Override
+> 	public int getPrise(Jeu jeu) {
+> 		assert (jeu.getNombreAllumettes() > 0);
+> 		Random rnd = new Random();
+> 		if (jeu.getNombreAllumettes() > Jeu.PRISE_MAX) {
+
+allumettes/Arbitre.java: line 119-122 [34]
+allumettes/Arbitre.java: line 123-126
+< 		if (choix == 1) {
+< 			joueur.setStrat(new StrategieExpert());
+< 		} else if (choix == 2) {
+< 			joueur.setStrat(new StrategieHumain(joueur.getNom()));
+---
+> 		} else if (choix == 3) {
+> 			joueur.setStrat(new StrategieLent());
+> 		} else if (choix == 4) {
+> 			joueur.setStrat(new StrategieNaif());
+
+allumettes/JeuSimple.java: line 13-22 [31]
+allumettes/Procuration.java: line 16-25
+< 		this.nombreAllumettes = nbAllumettes;
+< 	}
+< 
+< 	@Override
+< 	public int getNombreAllumettes() {
+< 		return this.nombreAllumettes;
+< 	}
+< 
+< 	@Override
+< 	public void retirer(int nbPrises) throws CoupInvalideException {
+---
+>         this.nombreAllumettes = nbAllumettes;
+>     }
+> 
+>     @Override
+>     public int getNombreAllumettes() {
+>         return this.nombreAllumettes;
+>     }
+> 
+>     @Override
+>     public void retirer(int nbPrises) throws OperationInterditeException {
+
+allumettes/Arbitre.java: line 91-95 [28]
+allumettes/Arbitre.java: line 101-105
+< 			}
+< 			if (!coupInvalide) {
+< 				if (joueurcourant.isEqual(this.joueur2)) {
+< 					joueurcourant = this.joueur1;
+< 					stratcourant = this.joueur1.getStrat();
+---
+> 		}
+> 		if (!jeuTriche) {
+> 			if (joueurcourant.isEqual(this.joueur2)) {
+> 				gagnant = this.joueur2;
+> 				perdant = this.joueur1;
+
+allumettes/StrategieRapide.java: line 1-11 [28]
+allumettes/StrategieExpert.java: line 1-13
+< package allumettes;
+< 
+< /**
+<  * La classe StrategieRapide caractérise une stratégie où le joueur prend
+<  * le maximum d'allumettes possible.
+<  */
+< public class StrategieRapide implements Strategie {
+< 
+< 	@Override
+< 	public int getPrise(Jeu jeu) {
+< 		assert (jeu.getNombreAllumettes() > 0);
+---
+> package allumettes;
+> 
+> import java.util.Random;
+> 
+> /**
+>  * La classe StrategieExpert caractérise un joueur qui
+>  * joue du mieux qu’il peut (s’il peut gagner, il gagnera).
+>  */
+> public class StrategieExpert implements Strategie {
+> 
+> 	@Override
+> 	public int getPrise(Jeu jeu) {
+> 		assert (jeu.getNombreAllumettes() > 0);
+
+allumettes/Jouer.java: line 73-73 [27]
+allumettes/Jouer.java: line 74-74
+< 			int occ0 = args[1].length() - args[1].replace("@", "").length();
+---
+> 			int occ1 = args[2].length() - args[2].replace("@", "").length();
+
+allumettes/Jouer.java: line 48-54 [24]
+allumettes/Jouer.java: line 60-66
+< 			System.exit(1);
+< 		}
+< 	}
+< 
+< 	private static void verifierNombreArguments(String[] args) {
+< 		final int nbJoueurs = 2;
+< 		if (args.length < nbJoueurs) {
+---
+> 					+ args.length);
+> 		}
+> 	}
+> 
+> 	private static void verifierOccurenceArguments(String[] args) {
+> 		final int nbJoueurs = 2;
+> 		if (args.length == nbJoueurs) {
+
+allumettes/Arbitre.java: line 138-140 [24]
+allumettes/Arbitre.java: line 141-143
+< 		System.out.println("Veuillez choisir la nouvelle stratégie parmi celles-ci: ");
+< 		System.out.println("1. Stratégie Expert");
+< 		System.out.println("2. Stratégie Humain");
+---
+> 		System.out.println("3. Stratégie Lent");
+> 		System.out.println("4. Stratégie Naïf");
+> 		System.out.println("5. Stratégie Rapide");
+
+allumettes/Arbitre.java: line 87-89 [24]
+allumettes/StrategieTricheur.java: line 30-32
+< 				System.out.println("[Je triche...]");
+< 				System.out.println("Abandon de la partie car "
+< 					+ joueurcourant.getNom() + " triche !");
+---
+>                 System.out.println("[Je triche...]");
+>                 System.out.println("[Allumettes restantes : "
+>                     + jeu.getNombreAllumettes() + "]");
+

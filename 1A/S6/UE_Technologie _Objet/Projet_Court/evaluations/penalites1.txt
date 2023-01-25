@@ -1,0 +1,77 @@
+Date de l'évaluation : jeu. 17 mars 2022 10:00:07 CET
+
+Nombre de similitudes (voir evaluations/penalites1/sim_java.txt) : 12
+Les similitudes indiquent généralement du code à restructurer.
+
+Erreurs checkstyle (différentes/types) : 4/1	(voir evaluations/penalites1//checkstyle.log)
+
+Classe OperationInterditeException : OperationInterditeException (ok)
+
+Procuration sur le jeu réel : allumettes/Procuration.java (ok)
+
+OperationInterditeException, levée dans : allumettes/Procuration.java (ok)
+OperationInterditeException, récupérée dans : allumettes/Arbitre.java (ok)
+
+Throwable, Exception et RuntimeException ne devraient pas être récupérées car trop générales... ok
+
+AssertionError ne doit pas être récupérée... ok
+
+Autres exceptions récupérées :
+  | allumettes/Arbitre.java:81:         } catch (CoupInvalideException e) {
+  | allumettes/StrategieHumain.java:27:     } catch (NumberFormatException e) {
+  | allumettes/StrategieHumain.java:51:     } catch (NumberFormatException e) {
+  | allumettes/Jouer.java:41:       } catch (ConfigurationException e) {
+  | allumettes/StrategieTricheur.java:18:        } catch (CoupInvalideException e) {
+
+Utilisation de 'Scanner' : ok
+  | allumettes/Arbitre.java:56:     Scanner scan = new Scanner(System.in);
+  | allumettes/Arbitre.java:176:        Scanner scan = new Scanner(System.in);
+  | allumettes/StrategieHumain.java:12: private Scanner scan;
+  | allumettes/StrategieHumain.java:18:     this.scan = new Scanner(System.in);
+  | allumettes/StrategieHumain.java:43: public static int getPrise(Jeu jeu, Joueur joueur, Scanner scan)
+
+Utilisation de 'split' : ok
+  | allumettes/Jouer.java:131:      String[] j = args.split("@");
+
+Utilisation de 'Random' : ok
+  | allumettes/StrategieExpert.java:3:import java.util.Random;
+  | allumettes/StrategieExpert.java:14:     Random rand = new Random();
+  | allumettes/StrategieNaif.java:3:import java.util.Random;
+  | allumettes/StrategieNaif.java:14:       Random rnd = new Random();
+
+Utilisation de '3' : Ne pas utiliser de constante littérale hors -1, 0 ou 1 (peut-être PRISE_MAX ?)
+  |     allumettes/Arbitre.java:146:        } else if (choix == 3) {
+  |     allumettes/Arbitre.java:164:        System.out.println("3. Stratégie Lent");
+
+Affichage de 'Impossible !' : ok
+
+Utilisation de 'System.exit' : ok
+
+Compilation de Jouer.java : OK.
+Compilation de Arbitre.java : OK.
+Compilation de StrategieRapideTest.java : OK.
+Test exemplePresqueSujet : ok
+Test exempleTricheurSujet : ok
+Test exempleConfiantTricheurSujet : ok
+Test exempleRobustesse : ok
+Test exempleHumainTricheurExpert : ok
+Test exempleMaxLou : ok
+Test exempleRapideRapide : ok
+Test exempleTricheurExpert : ok
+
+Test RobustesseTest : OK (25 tests)	(voir evaluations/penalites1/RobustesseTest.log)
+
+On recommence avec les classes/interfaces fournies : Jeu ConfigurationException CoupInvalideException
+Compilation de Jouer.java : OK.
+Compilation de Arbitre.java : OK.
+
+Vérification du respect du diagramme de classe...
+Test FormeTest : Tests run: 2,  Failures: 1	(voir evaluations/penalites1/FormeTest.log)
+    1) testerRespectArchitecture(FormeTest)
+        AssertionError: Méthode manquante dans la classe allumettes.Arbitre : arbitrer(allumettes.Jeu)
+
+
+Compilation de StrategieRapideTest.java : OK.
+Test allumettes.StrategieRapideTest : OK (3 tests)	(voir evaluations/penalites1/allumettes.StrategieRapideTest.log)
+
+Total pénalités : 0

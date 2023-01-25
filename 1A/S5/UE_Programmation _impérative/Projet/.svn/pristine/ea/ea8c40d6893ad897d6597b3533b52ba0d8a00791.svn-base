@@ -1,0 +1,84 @@
+with Ada.Streams.Stream_IO; use Ada.Streams.Stream_IO;
+with Ada.Text_IO; use Ada.Text_IO;
+with Ada.Integer_Text_IO;   use Ada.Integer_Text_IO;
+
+package body openfile is
+
+
+    function Stockage(File_Name : in String) return T_Symbole is
+        File      : Ada.Streams.Stream_IO.File_Type;	-- car il y a aussi Ada.Text_IO.File_Type
+        S         : Stream_Access;
+        Octet     : T_Octet;
+        Symbole : T_Symbole;
+    begin
+        Open(File, In_File, File_Name);
+        S := Stream(File);
+        Symbole.Nb_Elements:= 0;
+        while not End_Of_File(File) loop
+            Octet := T_Octet'Input(S);
+            Put("Octet = " & T_Octet'Image(Octet));
+            Put(" '" & Character'Val(Octet) & "'");
+            New_Line;
+            Symbole.Nb_Elements := Symbole.Nb_Elements + 1;
+            Symbole.Elements(Symbole.Nb_Elements) := Character'Val(Octet);
+        end loop;
+        --   Fermer le fichier
+        Close (File);
+        Put ('[');
+        Put (' ');
+        Put(Symbole.Elements(1));
+        for I in 2..Symbole.Nb_Elements-1 loop
+            Put (", ");
+            Put(Symbole.Elements(I));
+        end loop;
+        Put (" ]");
+        New_line;
+        return Symbole;
+    end Stockage;
+
+
+    function Tab_Frequence(Tab_Texte : T_Symbole) return T_Freq is
+        Tab_Freq : T_Freq;
+        i : Integer;
+    begin
+        for j in 1..256 loop
+            Tab_Freq(j) := 0;
+        end loop;
+
+        i := 1;
+        while i /=Tab_Texte.Nb_Elements loop
+            for j in 1..256 loop
+                if Tab_Texte.Elements(i) = Character'Val(j-1) then
+                    Tab_Freq(j) := Tab_Freq(j) + 1;
+                end if;
+            end loop;
+            i := i + 1;
+        end loop;
+
+        Put ('[');
+        Put (' ');
+        Put(Tab_Freq(1),1);
+        for I in 2..256 loop
+            Put (", ");
+            Put(Tab_Freq(I),1);
+        end loop;
+        Put (" ]");
+        New_line;
+        return Tab_Freq;
+    end Tab_Frequence;
+
+    function Nb_Symbole(Tab_Freq : in T_Freq) return Integer is
+        Nb : Integer;
+    begin
+        Nb := 0;
+        for i in 1..256 loop
+            if Tab_Freq(i) /= 0 then
+                Nb := Nb + 1;
+            end if;
+        end loop;
+        Put(Nb,1);
+        New_line;
+        return Nb;
+    end Nb_Symbole;
+
+end openfile;

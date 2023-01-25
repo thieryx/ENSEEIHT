@@ -1,0 +1,76 @@
+Nom       : Xu
+Prénom    : Thierry
+Groupe TP : I
+
+Les « ... » indiquent les endroits à compléter.
+
+=====[ Temps passé ]============================================================
+
+Ces informations de temps sont demandées à titre indicatif et ne sont pas
+prises en compte dans la notation du projet.
+
+
+* Temps passé sur la V1 : 12 heures 00 minutes
+* Temps passé sur la V2 : ... heures ... minutes
+
+Pour la V2 on ne tiendra pas compte du temps passé sur la V1.
+
+
+=====[ Questions ]==============================================================
+
+--------------------------------------------------------------------------------
+Pourquoi l'exception OperationInterditeException ne peut pas être définie
+comme vérifiée par le compilateur ?
+--------------------------------------------------------------------------------
+
+Le compilateur vérifie que toutes les exceptions vérifiées qui sont proposées
+dans l'algorithme sont bien prises en compte. Or OperationInterditeException
+hérite de RuntimeException qui n'est pas une exception vérifiée. Celle-ci
+n'est elle-même pas une exception vérifiée. Ainsi, elle ne peut pas être définie
+comme vérifiée par le compilateur. De plus, OperationInterditeException est
+défini comme étant une exception non vérifiée car on ne sait pas exactement
+le moment où elle se produit.
+
+--------------------------------------------------------------------------------
+Expliquer ce qu'il faut faire pour ajouter un nouveau niveau de jeu, par
+exemple la stratégie lente (C13).  Pour plus de précision, on numérotera
+les étapes à faire.
+--------------------------------------------------------------------------------
+Pour ajouter un nouveau niveau de jeu (ici on prendra l'exemple de la stratégie
+lente), il faudrait:
+1. Ajouter une nouvelle classe qui porte le nom du nouveau niveau de jeu. Ici,
+   cela sera "StrategieLent".
+2. Ecrire une classe de tests qui sera nommé StrategieLentTest.
+3. Ajouter l'option de reconnaissance de la stratégie dans la méthode IdentStrat
+   de la classe Jouer mais également dans les méthodes changeStrat et
+   afficherMenu de la classe Arbitre.
+
+--------------------------------------------------------------------------------
+Expliquer ce qui permet, dans votre conception, de changer dynamiquement
+(en cours d'exécution du programme) la stratégie d'un joueur (C14).
+--------------------------------------------------------------------------------
+
+Pour changer dynamiquement (en cours d'exécution du programme) la stratégie d'un
+joueur (C14), il faut ajouter un argument optionnel ""-changeStrat". Par exemple,
+on aurait: java allumettes.Jouer -changeStrat Ordinateur@rapide Xavier@tricheur.
+
+Pour cela, j'ai ajouté une méthode dans la classe Arbitre une méthode qui
+affiche le menu des stratégies disponibles (afficherMenu) ainsi qu'une autre
+méthode qui va lire l'entrée au clavier du choix de l'utilisateur (integerRead).
+Enfin, la méthode changeStrat permettra de changer la stratégie du joueur.
+
+=====[ Explications ]===========================================================
+
+--------------------------------------------------------------------------------
+Donner ici les explications supplémentaires utiles à la compréhension du
+travail rendu.
+--------------------------------------------------------------------------------
+
+Après l'ajout de la méthode pour changer dynamiquement la stratégie du joueur,
+le test FormeTest ne passe plus. En effet, j'ai du ajouter un booléen dans les
+arguments de la méthode arbitrer pour activer ou non la possibilité de changer
+de stratégies. Quant à checkstyles, les erreurs sont dus au fait que
+l'utilisateur doit rentrer au clavier un entier de 1 à 6 pour choisir
+dynamiquement une stratégie.
+
+--------------------------------------------------------------------------------

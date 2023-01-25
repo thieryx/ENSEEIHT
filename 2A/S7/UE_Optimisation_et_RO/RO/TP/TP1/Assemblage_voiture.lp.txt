@@ -1,0 +1,15 @@
+\* Problem: Assemblage de voitures *\
+
+\* nl: Nombre de voitures modèle L *\
+\* ns: Nombre de voitures modèle S *\
+
+Maximize
+ Benefice: + 10000 nl + 9000 ns
+
+Subject To
+ RythmedeProduction: + 0.06 nl + 0.05 ns <= 60
+ CapacitedeStockage: + 10 nl + 20 ns <= 15000
+ LimiteDemande: nl <= 800
+ 
+int nl ns
+End

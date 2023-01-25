@@ -1,0 +1,7 @@
++ C11 : Pas d'utilisation des exceptions pour la robustesse du traitement des arguments de la ligne de commande
++ C13 : L'arbitre ne doit ni utiliser directement, ni tester la stratégie d'un joueur (instanceof, equals, etc)
+
+
+
++ L3 : Fichier LISEZ-MOI.txt
+    + Question 1 incomplète

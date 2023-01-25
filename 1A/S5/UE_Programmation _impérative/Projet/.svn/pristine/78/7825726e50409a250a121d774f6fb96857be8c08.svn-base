@@ -1,0 +1,13 @@
+with openfile; use openfile;
+
+procedure test_compression is
+
+    File_Name : String :=  "exemple_fichier.out";
+    T_texte : T_Symbole;
+    T_Freq_Symbole : T_Freq;
+    Nombre_Symbole : Integer;
+begin
+    T_texte := Stockage(File_Name);
+    T_Freq_Symbole := Tab_Frequence(T_texte);
+    Nombre_Symbole := Nb_Symbole(T_Freq_Symbole);
+end test_compression;

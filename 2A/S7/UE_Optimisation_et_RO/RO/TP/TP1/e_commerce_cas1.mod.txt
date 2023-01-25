@@ -1,0 +1,77 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+
+###############################  Sets  ###############################
+
+set DEMANDE;
+
+set FLUIDE;
+
+set MAGASIN;
+
+################### Variables ###################
+
+# Affectation des fluides par commande et par magasin
+var affectation{i in DEMANDE, j in MAGASIN, k in FLUIDE}, >=0;
+
+###################  Constants: Data to load   #########################
+
+# Coût unitaire par magasin d'origine
+param cout{i in MAGASIN, j in FLUIDE};
+
+# Fluides demandés par commande
+param commande{i in DEMANDE, j in FLUIDE};
+
+# Stock de fluides par magasin
+param stock{i in MAGASIN, j in FLUIDE};
+
+################### Constraints ###################
+
+s.t. DepassePasStock{j in MAGASIN, k in FLUIDE}:
+	sum{i in DEMANDE} affectation[i,j,k] <= stock[j,k];
+s.t. EgaleDemande{i in DEMANDE, k in FLUIDE}:
+	sum{j in MAGASIN} affectation[i,j,k] = commande[i,k];
+
+###### Objective ######
+
+minimize CoutTotal:
+		sum{i in DEMANDE, j in MAGASIN, k in FLUIDE} cout[j,k]* affectation[i,j,k];
+
+#end;
+
+
+#default data
+
+data;
+
+set MAGASIN :=
+m1
+m2
+m3;
+
+set FLUIDE :=
+f1
+f2;
+
+set DEMANDE :=
+d1
+d2;
+
+param commande: f1 f2 :=
+d1 2 0
+d2 1 3;
+
+param stock: f1 f2 :=
+m1 2.5 1
+m2 1 2
+m3 2 1;
+
+param cout: f1 f2 :=
+m1 1 1
+m2 2 3
+m3 3 2;
+end;

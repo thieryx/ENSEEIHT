@@ -1,0 +1,84 @@
+Date de l'évaluation : mar. 05 avril 2022 09:51:28 CEST
+
+Nombre de similitudes (voir evaluations/penalites2/sim_java.txt) : 11
+Les similitudes indiquent généralement du code à restructurer.
+
+Erreurs checkstyle (différentes/types) : 4/1	(voir evaluations/penalites2//checkstyle.log)
+
+Classe OperationInterditeException : OperationInterditeException (ok)
+
+Procuration sur le jeu réel : allumettes/Procuration.java (ok)
+
+OperationInterditeException, levée dans : allumettes/Procuration.java (ok)
+OperationInterditeException, récupérée dans : allumettes/Arbitre.java (ok)
+
+Throwable, Exception et RuntimeException ne devraient pas être récupérées car trop générales... ok
+
+AssertionError ne doit pas être récupérée... ok
+
+Autres exceptions récupérées :
+  | allumettes/Arbitre.java:74:         } catch (CoupInvalideException e) {
+  | allumettes/StrategieHumain.java:41:     } catch (NumberFormatException e) {
+  | allumettes/StrategieHumain.java:48:             } catch (CoupInvalideException e1) {
+  | allumettes/Jouer.java:44:       } catch (ConfigurationException e) {
+  | allumettes/StrategieTricheur.java:33:            } catch (CoupInvalideException e) {
+
+Utilisation de 'Scanner' : ok
+  | allumettes/Arbitre.java:153:        Scanner scan = new Scanner(System.in);
+  | allumettes/StrategieHumain.java:12: private static Scanner scan;
+  | allumettes/StrategieHumain.java:21:     scan = new Scanner(System.in);
+  | allumettes/StrategieHumain.java:29:     scan = new Scanner(System.in);
+
+Utilisation de 'split' : ok
+  | allumettes/Jouer.java:135:      String[] j = args.split("@");
+
+Utilisation de 'Random' : ok
+  | allumettes/StrategieExpert.java:3:import java.util.Random;
+  | allumettes/StrategieExpert.java:14:     Random rand = new Random();
+  | allumettes/StrategieNaif.java:3:import java.util.Random;
+  | allumettes/StrategieNaif.java:14:       Random rnd = new Random();
+
+Utilisation de '3' : Ne pas utiliser de constante littérale hors -1, 0 ou 1 (peut-être PRISE_MAX ?)	(pénalité : 2)
+  |     allumettes/Arbitre.java:123:        } else if (choix == 3) {
+  |     allumettes/Arbitre.java:141:        System.out.println("3. Stratégie Lent");
+
+Affichage de 'Impossible !' : ok
+
+Utilisation de 'System.exit' : ok
+
+Compilation de Jouer.java : OK.
+Compilation de Arbitre.java : OK.
+Compilation de StrategieRapideTest.java : OK.
+Test exemplePresqueSujet : ok
+Test exempleTricheurSujet : ok
+Test exempleConfiantTricheurSujet : ok
+Test exempleRobustesse : ok
+Test exempleHumainTricheurExpert : ok
+Test exempleMaxLou : ok
+Test exempleRapideRapide : ok
+Test exempleTricheurExpert : ok
+Test exempleExpertTest : ok
+Test exempleExpertTest2 : ok
+Test exempleExpertTest3 : ok
+Test exempleExpertTest4 : ok
+Test exempleRapideTest : ok
+Test exempleRapideTest1 : ok
+Test exempleRapideTest2 : ok
+Test exempleRapideTest3 : ok
+
+Test RobustesseTest : OK (25 tests)	(voir evaluations/penalites2/RobustesseTest.log)
+
+On recommence avec les classes/interfaces fournies : Jeu ConfigurationException CoupInvalideException
+Compilation de Jouer.java : OK.
+Compilation de Arbitre.java : OK.
+
+Vérification du respect du diagramme de classe...
+Test FormeTest : Tests run: 2,  Failures: 1	(pénalité : 2)	(voir evaluations/penalites2/FormeTest.log)
+    1) testerRespectArchitecture(FormeTest)
+        AssertionError: Méthode manquante dans la classe allumettes.Arbitre : arbitrer(allumettes.Jeu)
+
+
+Compilation de StrategieRapideTest.java : OK.
+Test allumettes.StrategieRapideTest : OK (3 tests)	(voir evaluations/penalites2/allumettes.StrategieRapideTest.log)
+
+Total pénalités : 4

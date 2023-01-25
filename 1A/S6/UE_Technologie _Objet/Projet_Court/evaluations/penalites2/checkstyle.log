@@ -1,0 +1,6 @@
+Début de la vérification...
+[ERROR] Arbitre.java:123:29: '3' devrait être défini comme une constante. [MagicNumber]
+[ERROR] Arbitre.java:125:29: '4' devrait être défini comme une constante. [MagicNumber]
+[ERROR] Arbitre.java:127:29: '5' devrait être défini comme une constante. [MagicNumber]
+[ERROR] Arbitre.java:129:29: '6' devrait être défini comme une constante. [MagicNumber]
+Vérification terminée.

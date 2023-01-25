@@ -1,0 +1,72 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+
+###############################  Sets  ###############################
+
+set LIEUX;
+
+################### Variables ###################
+
+# Trajet du livreur
+var x{i in LIEUX, j in LIEUX}, binary;
+
+# Variable associée aux lieux
+var u{i in LIEUX}, integer, >=1;
+
+###################  Constants: Data to load   #########################
+
+# Distance entre les points de livraison
+param distance{i in LIEUX, j in LIEUX};
+
+################### Constraints ###################
+
+
+s.t. LigneBienFormee{j in LIEUX}:
+sum {i in LIEUX} x[i,j] = 1;
+s.t. ColonneBienFormee{i in LIEUX}:
+sum {j in LIEUX} x[i,j] = 1;
+s.t. DiagBienFormee{i in LIEUX}:
+x[i,i] = 0;
+
+# Inégalités MTZ
+s.t. PasdeSousTour{i in LIEUX: i<> 'ALPHA'}:
+(sum{k in LIEUX} 1) >= u[i] >= 2;
+s.t. PasdeSousTour2{i in LIEUX, j in LIEUX: i <> 'ALPHA' and j <> 'ALPHA'}:
+u[i] - u[j] + 1 <= (sum{k in LIEUX} 1) * (1 - x[i,j]);
+
+###### Objective ######
+
+minimize DistanceTotal:
+		sum{i in LIEUX, j in LIEUX} x[i,j] * distance[i,j];
+
+#end;
+
+
+#default data
+
+data;
+
+set LIEUX :=
+ALPHA
+C1
+C2
+C3
+C4
+C5;
+
+
+param distance: ALPHA C1 C2 C3 C4 C5 :=
+ALPHA 1e2 1 1 10 12 12
+C1 1 1e2 1 8 10 11
+C2 1 1 1e2 8 11 10
+C3 10 8 8 1e2 1 1
+C4 12 10 11 1 1e2 1
+C5 12 11 10 1 1 1e2;
+
+
+
+end;

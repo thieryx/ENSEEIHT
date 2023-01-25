@@ -1,0 +1,141 @@
+with Ada.Text_IO;            use Ada.Text_IO;
+with LCA_projet;
+with Arbre;    use Arbre;
+
+package body compression is
+
+    package LCA_projet_new is
+            new LCA_projet ( T_Donnee => T_Arbre);
+    use LCA_projet_new;
+
+
+    function Construire_Tab_Huff (Tab_binaire: in T_Tab_symbole; Tab_octet: in T_Tab; Nb_symbole : in Integer ) return  T_Tab_Huff is
+        Tab_Huff: T_Tab_Huff;
+        i: Integer := 1;
+        cpt: Integer := 1;
+        Tab_binaire_new: T_Tab_symbole;
+    begin
+        Tab_binaire_new.Elements := Tab_binaire.Elements;
+        Tab_binaire_new.Nb_Elements := Tab_binaire_new.Nb_Elements;
+        for j in 1..Nb_symbole loop
+            Initialiser(Tab_Huff(j).binaire);
+        end loop;
+
+        while cpt /= (Nb_symbole + 1) loop
+            Tab_Huff(cpt).char := Character'Val(Tab_octet.Elements(cpt));
+            if Tab_binaire_new.Elements(i) = '0' then
+                Empiler(Tab_Huff(cpt).binaire, '0');
+                i := i + 1;
+
+            elsif Tab_binaire_new.Elements(i) = 'm' then
+                Empiler(Tab_Huff(cpt).binaire, '1');
+                i := i + 1;
+            elsif Tab_binaire_new.Elements(i) = '1' then
+                cpt := cpt +1;
+                Tab_binaire_new.Elements(i) := 'm';  -- 'm' pour garder l’ancien '1' en mémoire
+                while Tab_binaire_new.Elements(i-1) /= '0' loop
+                    Tab_binaire_new.Elements(i-1) := 'x';    -- 'x' signifie chiffre supprimé
+                    i := i-1;
+                end loop;
+                Tab_binaire_new.Elements(i-1) := 'x';
+                i := 1;
+            end if;
+        end loop;
+        return Tab_Huff;
+
+    end Construire_Tab_Huff;
+
+    function Construire_Arbre_Huff(Tab_freq : in T_Tab) return T_Arbre is
+        Sda : T_LCA;
+        Arbre : T_Arbre;
+        Sous_Arbre : T_Arbre;
+    begin
+        Initialiser(Sda);
+        Initialiser(Arbre, 0); -- Enregistrer la feuille correspond à “\$”
+        Enregistrer(Sda, 0, Arbre) ;  --Fonction enregistrer du mini projet avec relation d’ordre pour trier automatiquement
+
+        for i in 1..256 loop
+            if Tab_Freq.Elements(i) /= 0 then
+                Initialiser(Arbre, Tab_Freq.Elements(i));
+                Enregistrer(Sda, Tab_Freq.Elements(i), Arbre);
+            end if;
+        end loop;
+
+        while Taille(Sda) /= 1 loop
+            Sous_arbre := Fusion(Premier(Sda), Deuxieme(Sda));
+            Enregistrer(Sda, Frequence(Premier(Sda))+Frequence(Deuxieme(Sda)), Sous_arbre);
+            Supprimer_Premier(Sda); --Supprime le 1er élément d’une SDA
+            Supprimer_Premier(Sda);
+        end loop;
+        return Arbre;
+    end Construire_Arbre_Huff;
+
+    function Construire_Liste_octet(Arbre: in T_Arbre; Tab_freq : in T_Tab; Nb_symbole: in Integer) return T_Tab is
+        courant: T_Arbre;
+        cpt: Integer := 1;
+        Tab_octet : T_Tab;
+        arret: boolean := False;
+
+    begin
+        courant := Arbre;
+        if arret then
+            return Tab_octet;
+        else
+            if not Est_Vide(Arbre_Gauche(courant)) then
+                return Construire_Liste_octet(Arbre_Gauche(courant), Tab_freq, Nb_symbole);
+            end if;
+
+            if not Est_Vide(Arbre_Droit(courant)) then
+                return Construire_Liste_octet(Arbre_Droit(courant), Tab_freq, Nb_symbole);
+            end if;
+
+            for i in 1..256 loop
+                if Frequence(courant) = 0 then
+                    Tab_octet(cpt) := -1;
+                    cpt := cpt + 1;
+                elsif Tab_freq(i) = Frequence(courant) then
+                    Tab_octet(cpt) := i;
+                    cpt := cpt + 1;
+                end if;
+            end loop;
+
+            if cpt = (Nb_symbole+1) then
+                arret := True;
+            end if;
+        end if;
+    end Construire_Liste_octet;
+
+    function Construire_Liste_binaire(Arbre: in T_Arbre; Nb_Symbole: in Integer) return T_Tab_symbole is
+        Tab_binaire: T_Tab_symbole;
+        cpt: Integer := 1;
+        courant : T_Arbre;
+        arret : boolean := False;
+        cpt_arret : Integer := 0;
+    begin
+        courant := Arbre;
+        if arret then
+            return Tab_binaire;
+        else
+            if Est_Vide(Arbre_Gauche(courant)) then
+                Tab_binaire.Elements(cpt) := '0';
+                Tab_binaire.Nb_Elements := Tab_binaire.Nb_Elements + 1;
+                cpt := cpt + 1;
+                return Construire_Liste_binaire(Arbre_Gauche(Arbre), Nb_Symbole);
+            end if;
+
+            if Est_Vide(Arbre_Droit(Arbre)) then
+                Tab_binaire.Elements(cpt) := '1';
+                Tab_binaire.Nb_Elements := Tab_binaire.Nb_Elements + 1;
+                cpt := cpt + 1;
+                return Construire_Liste_binaire(Arbre_Droit(Arbre), Nb_Symbole);
+            end if;
+
+            cpt_arret := cpt_arret + 1;
+            if cpt = Nb_symbole then
+                arret := True;
+            end if;
+        end if;
+    end Construire_Liste_binaire;
+
+
+end compression;

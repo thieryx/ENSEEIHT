@@ -1,0 +1,11 @@
+compression.adb:20:47: error: illegal character
+compression.adb:21:34: error: illegal character
+compression.adb:22:49: error: illegal character
+compression.adb:25:37: error: illegal character
+compression.adb:26:49: error: illegal character
+compression.adb:28:37: error: illegal character
+compression.adb:30:36: error: illegal character
+compression.adb:31:44: error: illegal character
+compression.adb:32:42: error: illegal character
+compression.adb:35:38: error: illegal character
+compression.adb:69:09: error: missing "begin" for function "Stocker_Texte" at line 68

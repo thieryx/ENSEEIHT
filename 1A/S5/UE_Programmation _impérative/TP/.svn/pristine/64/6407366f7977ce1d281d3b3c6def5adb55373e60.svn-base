@@ -1,0 +1,234 @@
+% Compte-rendu minimal du mini-projet SDA : LCA et TH
+% Auteur : XU Thierry
+% Groupe de TP : I
+
+
+**Consigne :** Vous devez écrire vos réponse à la place des ... en laissant
+une ligne vide avant et deux après votre réponse.
+
+**Remarque :** Ce document utilise le langage Markdown. On peut en engendrer
+une version PDF en faisant par exemple :
+
+~~~
+pandoc --toc -N -o LISEZ-MOI.pdf LISEZ-MOI.txt
+~~~
+
+
+# Exercice 1
+
+## Question 1.4
+
+**Indiquer les inconvénients/avantages d'une implantation par listes chaînées
+d'une SDA.**
+
+Les inconvénients de l'implantation par listes chaînéessont la nécessicité de créer 
+une variable locale pour éviter de perdre la tête de la chaîne en mode itératif.
+De plus, si la donnée recherchée se situe dans une cellule en fin de liste,
+il sera nécessaire de la parcourir entièrement pour y accéder. Quant aux avantages,
+contrairement à une liste simple où il est nécessaire de définir sa taille avant
+son utilisation, cela n'est pas nécessaire pour une liste chaînée. Il est possible
+d'ajouter des cellules à l'infini au cours du programme.
+
+
+# Évaluation expérimentale.
+
+## Performance comparée de LCA et TH
+
+Indiquer ici les résultats obtenus.
+
+LCA:
+
+~~~~~~~~~~~~~~~~~
+Borne  : 10
+Taille : 10000
+Min : 942
+Max : 1038
+
+real	0m0,040s
+user	0m0,008s
+sys	0m0,000s
+~~~~~~~~~~~~~~~~~
+Borne  : 100
+Taille : 10000
+Min : 70
+Max : 131
+
+real	0m0,114s
+user	0m0,105s
+sys	0m0,004s
+~~~~~~~~~~~~~~~~~
+Borne  : 100
+Taille : 100000
+Min : 937
+Max : 1085
+
+real	0m1,117s
+user	0m1,097s
+sys	0m0,000s
+~~~~~~~~~~~~~~~~~
+Borne  : 100
+Taille : 1000000
+Min : 9778
+Max : 10226
+
+real	0m11,146s
+user	0m10,959s
+sys	0m0,032s
+~~~~~~~~~~~~~~~~~
+Borne  : 1000
+Taille : 1000
+Min : 1
+Max : 5
+
+real	0m0,064s
+user	0m0,057s
+sys	0m0,000s
+~~~~~~~~~~~~~~~~~
+Borne  : 1000
+Taille : 10000
+Min : 2
+Max : 24
+
+real	0m1,168s
+user	0m1,154s
+sys	0m0,000s
+~~~~~~~~~~~~~~~~~
+Borne  : 1000
+Taille : 100000
+Min : 73
+Max : 157
+
+real	0m12,597s
+user	0m12,376s
+sys	0m0,032s
+~~~~~~~~~~~~~~~~~
+Borne  : 1000
+Taille : 1000000
+Min : 896
+Max : 1092
+
+real	2m6,528s
+user	2m5,375s
+sys	0m0,160s
+~~~~~~~~~~~~~~~~~
+
+-------------------------------------
+TH:
+
+~~~~~~~~~~~~~~~~
+Borne  : 10
+Taille : 10000
+Min : 950
+Max : 1039
+
+real	0m0,394s
+user	0m0,389s
+sys	0m0,000s
+~~~~~~~~~~~~~~~~~
+Borne  : 100
+Taille : 10000
+Min : 80
+Max : 128
+
+real	0m0,491s
+user	0m0,484s
+sys	0m0,000s
+~~~~~~~~~~~~~~~~~
+Borne  : 100
+Taille : 100000
+Min : 909
+Max : 1071
+
+real	0m4,394s
+user	0m4,317s
+sys	0m0,012s
+~~~~~~~~~~~~~~~~~
+Borne  : 100
+Taille : 1000000
+Min : 9769
+Max : 10307
+
+real	0m43,933s
+user	0m43,521s
+sys	0m0,052s
+~~~~~~~~~~~~~~~~~
+Borne  : 1000
+Taille : 1000
+Min : 1
+Max : 6
+
+real	0m0,110s
+user	0m0,103s
+sys	0m0,000s
+~~~~~~~~~~~~~~~~
+Borne  : 1000
+Taille : 10000
+Min : 2
+Max : 22
+
+real	0m0,921s
+user	0m0,913s
+sys	0m0,000s
+~~~~~~~~~~~~~~~~
+Borne  : 1000
+Taille : 100000
+Min : 69
+Max : 138
+
+real	0m9,110s
+user	0m8,972s
+sys	0m0,008s
+
+~~~~~~~~~~~~~~~~
+Borne  : 1000
+Taille : 1000000
+Min : 910
+Max : 1117
+
+real	1m29,120s
+user	1m28,596s
+sys	0m0,080s
+~~~~~~~~~~~~~~~~~
+
+
+## Qualité du générateur aléatoire
+
+Indiquer les conclusions quant à la qualité du générateur aléatoire.
+
+Le générateur aléatoire est plus rapide avec une TH qu'une LCA pour Borne et
+Taille grands. En effet, d'après les résultats, c'est le cas lorsque la valeur de
+la borne est supérieure à 1000 et celle de la taille supérieure à 10000.
+Par exemple, pour Borne égale à 1000 et Taille égale à 1000000, le générateur est 
+30 secondes plus rapide avec une TH qu'une LCA.
+
+# Principales difficultés rencontrées
+
+Indiquer ici les principales difficultés rencontrées lors de la réalisation de
+ce projet et comment elles ont été surmontées ou contournéeS.
+
+Les principales difficultés rencontrées lors de la réalisation de ce projet sont
+l'utilisation de la généricité, la chaînage, les exceptions dû à une programmation
+défensive et l'implémentation des modules. Ces difficultés ont été surmonté en revoyant
+les différents TD et TP traitant ces éléments.
+
+
+
+# Informations complémentaires
+
+Indiquer ici les informations qui pourraient aider à la compréhension du
+travail réalisé.
+
+Cette partie peut être vide.
+
+...
+
+
+
+# Bilan personnel
+
+Quel bilan personnel tirez vous de ce mini-projet ?
+
+Au vu des difficultés rencontrées, ce mini-projet est une bonne synthèse des différentes 
+notions citées plus haut. Il m'a permis de mieux saisir ces notions et de gagner en rigueur
+lors de l'écriture d'un code.
+

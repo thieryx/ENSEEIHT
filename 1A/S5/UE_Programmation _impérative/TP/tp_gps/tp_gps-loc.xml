@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project >
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/tp/tp_gps/tp_gps.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp_gps/premier_programme.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 28" line=" 5" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/tp/tp_gps/tp_gps.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp_gps/premier_programme.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 8" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/tp/tp_gps/tp_gps.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp_gps/premier_programme.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 5" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/tp/tp_gps/tp_gps.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp_gps/premier_programme.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>/home/txu/Documents/Annee_1/pim/tp/tp_gps/tp_gps.gpr</vfs_project>
+      <vfs_file>/home/txu/Documents/Annee_1/pim/tp/tp_gps/specifier_et_tester.adb</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

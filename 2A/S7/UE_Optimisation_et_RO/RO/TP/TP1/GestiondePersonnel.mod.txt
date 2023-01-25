@@ -1,0 +1,58 @@
+#  GLPK model file created by SUN for RO teaching
+
+
+###############################  Model ###############################
+
+
+
+###############################  Sets  ###############################
+
+set PERSONNES;
+
+set TRAVAIL;
+
+################### Variables ###################
+
+# Affectation du travail par personne
+var affectation{i in PERSONNES, j in TRAVAIL}, binary;
+
+###################  Constants: Data to load   #########################
+
+# Coût de formation
+param cout{i in PERSONNES, j in TRAVAIL};
+
+################### Constraints ###################
+
+s.t. LigneBienFormee{j in TRAVAIL}:
+sum {i in PERSONNES} affectation[i,j] = 1;
+s.t. ColonneBienFormee{i in PERSONNES}:
+sum {j in TRAVAIL} affectation[i,j] = 1;
+
+###### Objective ######
+
+minimize CoutTotal:
+		sum{i in PERSONNES, j in TRAVAIL} cout[i,j] * affectation[i,j];
+
+#end;
+
+
+#default data
+
+data;
+
+set PERSONNES :=
+p1
+p2
+p3;
+
+set TRAVAIL :=
+t1
+t2
+t3;
+
+param cout: t1 t2 t3 :=
+p1 0 1 1
+p2 1 0 1
+p3 1 1 0;
+
+end;

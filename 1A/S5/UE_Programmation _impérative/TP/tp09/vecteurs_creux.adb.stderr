@@ -1,0 +1,2 @@
+vecteurs_creux.adb:71:13: warning: unreachable code [enabled by default]
+vecteurs_creux.adb:102:17: error: assignment to "in" mode parameter not allowed
