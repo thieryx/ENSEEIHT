@@ -12,14 +12,18 @@ void lu_par_loop(Matrix A, info_type info){
 
   /* Initialize the tracing system */
   trace_init();
-  
+
+  #pragma omp parallel private(i)
+
   for(i=0; i<info.NB; i++){
     
     /* Do the Panel operation on column i */
+    #pragma omp single
     panel(A[i], i, info);
-    
+    #pragma omp barrier
+
     /* Parallelize this loop     */
-    
+    #pragma omp for
     for(j=i+1; j<info.NB; j++){
       /* Update column j with respect to the result of panel(A, i) */
       update(A[i], A[j], i, j, info);

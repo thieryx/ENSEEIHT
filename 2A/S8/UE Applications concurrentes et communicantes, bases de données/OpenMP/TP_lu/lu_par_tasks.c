@@ -12,18 +12,28 @@ void lu_par_tasks(Matrix A, info_type info){
 
   /* Initialize the tracing system */
   trace_init();
-  
-  for(i=0; i<info.NB; i++){
-    
-    /* Do the Panel operation on column i */
-    panel(A[i], i, info);
-    
-    /* Parallelize this loop     */
-    
-    for(j=i+1; j<info.NB; j++){
-      /* Update column j with respect to the result of panel(A, i) */
-      update(A[i], A[j], i, j, info);
+  #pragma omp parallel
+  {
+    #pragma omp single
+    {
+      // single thread so i is private
+      for(i=0; i<info.NB; i++){
+        
+        /* Do the Panel operation on column i */
+        #pragma omp task depend(inout:A[i]) firstprivate(i)
+        panel(A[i], i, info);
+        
+        /* Parallelize this loop     */
+        
+        for(j=i+1; j<info.NB; j++){
+          /* Update column j with respect to the result of panel(A, i) */
+          #pragma omp task depend(in:A[i]) depend(inout:A[j]) firstprivate(i,j)
+          update(A[i], A[j], i, j, info);
+        }
+      }
     }
+
+    #pragma omp taskwait
   }
   
   /* This routine applies permutations resulting from numerical

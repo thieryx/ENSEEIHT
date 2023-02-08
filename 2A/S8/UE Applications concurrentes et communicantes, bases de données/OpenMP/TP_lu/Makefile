@@ -3,7 +3,7 @@ FC       = gfortran
 LINK     = $(FC)
 
 FCFLAGS  = -O3 -fopenmp
-CFLAGS   = -O3 -fopenmp -Wunknown-pragmas
+CFLAGS   = -O3 -fopenmp -Wunknown-pragmas -fPIE
 LDFLAGS  = $(FCFLAGS) 
 LBLAS    = /mnt/n7fs/ens/tp_abuttari/acml-4.4.0/gfortran64/lib/libacml.a -lm
 
