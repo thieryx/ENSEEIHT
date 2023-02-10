@@ -44,12 +44,13 @@ int main(int argc, char** argv)
 
     // 1) in order to call kmeans we need to first convert the image into floats (CV_32F)
     // see the method Mat.convertTo()
-
+    Mat m_float;
+    m.convertTo(m_float, CV_32F);
     // 2) kmeans asks for a mono-dimensional list of "points". Our "points" are the pixels of the image that can be seen as 3D points
     // where each coordinate is one of the color channel (e.g. R, G, B). But they are organized as a 2D table, we need
     // to re-arrange them into a single vector.
     // see the method Mat.reshape(), it is similar to matlab's reshape
-
+    m_float.reshape()
     // now we can call kmeans(...)
 
 
