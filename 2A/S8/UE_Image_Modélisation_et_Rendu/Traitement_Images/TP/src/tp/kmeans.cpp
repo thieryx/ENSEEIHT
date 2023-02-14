@@ -39,20 +39,32 @@ int main(int argc, char** argv)
 
     // load the color image to process from file
     Mat m;
+    m = imread(imageFilename, IMREAD_COLOR);
     // for debugging use the macro PRINT_MAT_INFO to print the info about the matrix, like size and type
     PRINT_MAT_INFO(m);
 
     // 1) in order to call kmeans we need to first convert the image into floats (CV_32F)
     // see the method Mat.convertTo()
-    Mat m_float;
-    m.convertTo(m_float, CV_32F);
+    m.convertTo(m, CV_32F);
     // 2) kmeans asks for a mono-dimensional list of "points". Our "points" are the pixels of the image that can be seen as 3D points
     // where each coordinate is one of the color channel (e.g. R, G, B). But they are organized as a 2D table, we need
     // to re-arrange them into a single vector.
     // see the method Mat.reshape(), it is similar to matlab's reshape
-    m_float.reshape()
+    m.reshape(1, m.total());
     // now we can call kmeans(...)
+    Mat labels;
+    Mat centers;
+    kmeans(m, k, labels, TermCriteria(TermCriteria::EPS + TermCriteria::COUNT, 10, 1.0), 3, KMEANS_PP_CENTERS, centers);
+    // Reformer l'image segmentée à partir de labels
+    
 
+    imwrite("image_seg.jpg", m);
 
+    namedWindow("Image seg", cv::WINDOW_AUTOSIZE);
+
+    imshow("Image seg", m);
+
+    // Wait for a keystroke in the window
+    waitKey(0);
     return EXIT_SUCCESS;
 }
