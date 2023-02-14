@@ -17,7 +17,10 @@ void treetraverse_par(TreeNode *root, int nth){
   int depth, i;
 
   /* To be used in the second part of the excercise */
-  depth = root->l - 4;
+  // petit arbre
+  // depth = root->l - 4;
+  // grand arbre
+  depth = root->l - round(log(4*nth)/log(2));
 
   /* Initialize the counter to 0. MAXTHREADS is the maximum number of
      allowed threads. */
