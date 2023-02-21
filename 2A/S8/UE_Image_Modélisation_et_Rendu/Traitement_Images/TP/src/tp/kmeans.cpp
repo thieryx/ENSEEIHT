@@ -11,6 +11,9 @@ using namespace cv;
 using namespace std;
 
 
+void kmeans_custom(Mat image, int k, vect<int> labels, Mat centers) {
+
+}
 void printHelp(const string& progName)
 {
     cout << "Usage:\n\t " << progName << " <image_file> <K_num_of_clusters> [<image_ground_truth>]" << endl;
@@ -38,7 +41,7 @@ int main(int argc, char** argv)
     }
 
     // load the color image to process from file
-    Mat m, mf;
+    Mat m, m_ref;
     m = imread(imageFilename, IMREAD_COLOR);
     m_ref = imread(string(argv[3]), IMREAD_COLOR);
     // for debugging use the macro PRINT_MAT_INFO to print the info about the matrix, like size and type
@@ -47,15 +50,19 @@ int main(int argc, char** argv)
     // 1) in order to call kmeans we need to first convert the image into floats (CV_32F)
     // see the method Mat.convertTo()
     m.convertTo(m, CV_32F);
+    m_ref.convertTo(m_ref, CV_32F);
+
     // 2) kmeans asks for a mono-dimensional list of "points". Our "points" are the pixels of the image that can be seen as 3D points
     // where each coordinate is one of the color channel (e.g. R, G, B). But they are organized as a 2D table, we need
     // to re-arrange them into a single vector.
     // see the method Mat.reshape(), it is similar to matlab's reshape
     // now we can call kmeans(...)
     Mat vect = m.reshape(3, m.total());
+    Mat vect_ref = m_ref.reshape(3, m_ref.total());
     vector<int> labels;
     Mat1f centers;
     kmeans(vect, k, labels, TermCriteria(TermCriteria::EPS + TermCriteria::COUNT, 10, 1.0), 3, KMEANS_PP_CENTERS, centers);
+    
     // Reformer l'image segmentée à partir de labels
 
     for( int i = 0; i < 3; i++ ) {
@@ -72,21 +79,38 @@ int main(int argc, char** argv)
         vect.at<float>(i,2) = centers(labels[i], 2 );
     }
 
-    Mat vect_reshape = vect.reshape(3, m.rows);
+    // les critères de précision, sensibilité et similarité
+    float TP = 0;
+    float FP = 0;
+    float FN = 0;
+    
 
-    int TP, FP, FN;
-
-    for (int i = 0; i<m.rows; i++) {
-        for (int j = 0; i<m.cols; i++) {
-            m
+    for ( int i = 0; i < m.total(); i++) {
+        if (vect_ref.at<float>(i,1) == 0 && vect.at<float>(i,1) == 0) {
+            TP += 1;
+        } else if (vect_ref.at<float>(i,1) == 255 && vect.at<float>(i,1) == 0) {
+            FP += 1;
+        } else if (vect_ref.at<float>(i,1) == 0 && vect.at<float>(i,1) == 255) {
+            FN += 1;
         }
     }
 
-    imwrite("image_seg.png", vect_reshape);
+    float P = TP/(TP+FP);
+    float S = TP/(TP+FN);
+    float DSC = 2*TP/(2*TP + FP + FN);
+
+    cout << "Précision = " << endl << " "  << P << endl << endl;
+    cout << "Sensibilité = " << endl << " "  << S << endl << endl;
+    cout << "Coeff de similarité = " << endl << " "  << DSC << endl << endl;
+
+    //Affichage de l'image
+    Mat im_seg = vect.reshape(3, m.rows);
+
+    imwrite("image_seg.png", im_seg);
 
     namedWindow("Image seg", cv::WINDOW_AUTOSIZE);
 
-    imshow("Image seg", vect_reshape);
+    imshow("Image seg", im_seg);
 
     // Wait for a keystroke in the window
     waitKey(0);
