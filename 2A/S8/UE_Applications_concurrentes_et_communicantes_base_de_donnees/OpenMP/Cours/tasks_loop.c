@@ -14,7 +14,7 @@ printf("Hello %p\n",&i);
   {
     for(i=0; i<6; i++)
       {
-#pragma omp task firstprivate(i)
+#pragma omp task private(i)
         printf("Thread  %d   iteration: %d\n", omp_get_thread_num(), i);
       }
   }

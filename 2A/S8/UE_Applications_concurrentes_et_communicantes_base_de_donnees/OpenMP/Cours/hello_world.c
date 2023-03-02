@@ -1,4 +1,4 @@
-#include <aux.h>
+#include <./aux.h>
 
 
 

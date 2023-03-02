@@ -25,7 +25,7 @@ omp_set_num_threads(n);
   printf("Region 3 thread %2d / %2d.\n", omp_get_thread_num(), omp_get_num_threads());
 }
 
-#pragma omp parallel if(n<5)
+#pragma omp parallel if(n<4)
 {
   printf("Region 4 thread %2d / %2d.\n", omp_get_thread_num(), omp_get_num_threads());
 }

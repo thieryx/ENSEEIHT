@@ -19,7 +19,7 @@ figure('Name','Modelisation de la silhouette par deux courbes de Bezier couplees
 x = transpose(0:1/(p-1):1);
 liste_parametres = zeros(2*d-1,n);
 for j = 1:n
-	parametres = moindres_carres_paire(d,x,bord_inf(:,j),bord_sup(:,j));
+	parametres = moindres_carres_paire(d,x,bord_inf(:,j),bord_sup(:,j))
 	y_inf = bezier(x,beta_0,[parametres(1:d-1);parametres(end)]);
 	y_sup = bezier(x,gamma_0,parametres(d:end));
 
