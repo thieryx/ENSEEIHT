@@ -7,7 +7,7 @@ function X = moindres_carres(D_app)
     y = D_app(2,:)';
 
     % Détermination de la solution
-    A = [x.^2 x.*y y.^2 x y ones(length(x),1) ; 1 0 1 0 0 0];
+    A = [x.^2 x.*y y.^2 x y ones(n,1) ; 1 0 1 0 0 0];
     X = A\O;
 end
 

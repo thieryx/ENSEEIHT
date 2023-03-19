@@ -1,12 +1,7 @@
 function inconnu = moindres_carres(d, x, mat)
-        [rows,~] = size(mat);
-        A = zeros(rows,d);
-        for i = 1:d
-            A(:,i) = nchoosek(d,i)*(x.^i).*((1-x).^(d-i));
-        end
+        A = arrayfun(@(n) nchoosek(d,n), (1:d));
+        A = A.*x.^(1:d).*(1-x).^(d-(1:d));
         B = mat - mat(1)*((1-x).^d);
-
         inconnu = A\B;
-
 end
 
