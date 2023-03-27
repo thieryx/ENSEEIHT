@@ -28,11 +28,18 @@ figure('Name',['Detection de ' num2str(N) ' flamants roses'],'Position',[0,0,L,0
 % Tirage aleatoire d'une configuration initiale et calcul des niveaux de gris moyens :
 c = zeros(N,2);
 I_moyen = zeros(N,1);
+
 for i = 1:N
-	c_i = [nb_colonnes*rand nb_lignes*rand];
-	c(i,:) = c_i;
-	I_moyen(i) = calcul_I_moyen(I,c_i,R);
+    c_i = [nb_colonnes*rand nb_lignes*rand];
+    distances = sqrt(sum((c - c_i).^2, 2));
+    while min(distances) < sqrt(2)*R
+        c_i = [nb_colonnes*rand nb_lignes*rand];
+        distances = sqrt(sum((c - c_i).^2, 2));
+    end
+    c(i,:) = c_i;
+    I_moyen(i) = calcul_I_moyen(I,c_i,R);
 end
+
 liste_q = 0;
 I_moyen_config = mean(I_moyen);
 liste_I_moyen_config = I_moyen_config;
@@ -67,6 +74,12 @@ for q = 1:q_max
 
 	% Tirage aleatoire d'un nouveau disque et calcul du niveau de gris moyen :
 	c_alea = [nb_colonnes*rand nb_lignes*rand];
+    distances = sqrt(sum((c - c_alea).^2, 2));
+
+    while min(distances) < sqrt(2)*R
+        c_alea = [nb_colonnes*rand nb_lignes*rand];
+        distances = sqrt(sum((c - c_alea).^2, 2));
+    end
 	I_moyen_nouv = calcul_I_moyen(I,c_alea,R);
 
 	% Si le disque propose est "meilleur", mises a jour :
