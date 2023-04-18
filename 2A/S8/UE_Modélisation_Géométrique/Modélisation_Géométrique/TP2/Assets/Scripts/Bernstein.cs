@@ -74,7 +74,7 @@ public class Bernstein : MonoBehaviour
     {
         List<float> tToEval = new List<float>();
         // Construction des échantillons
-        for (float j=0 ; j<=1/pas ; j+=pas)
+        for (float j=0 ; j<1/pas ; j+=pas)
         {
             tToEval.Add(j);
         }

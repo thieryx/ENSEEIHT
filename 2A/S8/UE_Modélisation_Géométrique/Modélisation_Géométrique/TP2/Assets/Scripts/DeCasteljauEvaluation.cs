@@ -28,9 +28,9 @@ public class DeCasteljauEvaluation : MonoBehaviour
     {
         List<float> tToEval = new List<float>();
         // Construction des échantillons
-        for (float j=0 ; j<=1/pas ; j+=pas)
+        for (int i=0 ; i<=(int)1/pas ; i++)
         {
-            tToEval.Add(j);
+            tToEval.Add((float)i * pas);
         }
         return tToEval;
     }
